@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Full Stack Developer",
+    "company": "Company Name",
+    "period": "2024 - Present",
+    "description": "Placeholder for experience details. Add your work experience here.",
+    "technologies": ["React", "Node.js", "MongoDB"]
+  },
+  {
+    "id": 2,
+    "title": "Frontend Developer",
+    "company": "Previous Company",
+    "period": "2023 - 2024",
+    "description": "Placeholder for previous experience details.",
+    "technologies": ["React", "TypeScript", "TailwindCSS"]
+  }
+]

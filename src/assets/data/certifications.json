@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "AWS Certified Developer",
+    "issuer": "Amazon Web Services",
+    "date": "2024",
+    "credentialId": "#"
+  },
+  {
+    "id": 2,
+    "title": "TensorFlow Developer Certificate",
+    "issuer": "Google",
+    "date": "2023",
+    "credentialId": "#"
+  },
+  {
+    "id": 3,
+    "title": "Meta Frontend Developer",
+    "issuer": "Meta",
+    "date": "2023",
+    "credentialId": "#"
+  }
+]

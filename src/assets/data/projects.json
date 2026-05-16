@@ -1,0 +1,52 @@
+[
+  {
+    "id": "ai-road-extraction",
+    "title": "AI Road Extraction",
+    "description": "Deep learning based satellite image segmentation system for automated road extraction and GIS analysis.",
+    "category": "AI/ML",
+    "techStack": ["Python", "TensorFlow", "OpenCV", "Deep Learning"],
+    "github": "#",
+    "liveDemo": "#",
+    "image": null
+  },
+  {
+    "id": "pneumonia-detection",
+    "title": "Pneumonia Detection",
+    "description": "Real-time AI-powered pneumonia detection system using CNN-based medical image classification.",
+    "category": "AI/ML",
+    "techStack": ["Python", "Keras", "CNN", "Medical Imaging"],
+    "github": "#",
+    "liveDemo": "#",
+    "image": null
+  },
+  {
+    "id": "portfolio-website",
+    "title": "Portfolio Website",
+    "description": "Modern responsive portfolio with animated UI components and scalable frontend architecture.",
+    "category": "Full Stack",
+    "techStack": ["React", "Vite", "TailwindCSS", "Framer Motion"],
+    "github": "#",
+    "liveDemo": "#",
+    "image": null
+  },
+  {
+    "id": "full-stack-project",
+    "title": "Full Stack Project",
+    "description": "Placeholder for full stack project details.",
+    "category": "Full Stack",
+    "techStack": ["React", "Node.js", "MongoDB", "Express"],
+    "github": "#",
+    "liveDemo": "#",
+    "image": null
+  },
+  {
+    "id": "deployment-project",
+    "title": "Deployment Project",
+    "description": "Placeholder for deployment project details.",
+    "category": "Deployment",
+    "techStack": ["Docker", "AWS", "CI/CD", "Kubernetes"],
+    "github": "#",
+    "liveDemo": "#",
+    "image": null
+  }
+]
