@@ -1,18 +1,30 @@
 [
   {
     "id": 1,
-    "title": "Full Stack Developer",
-    "company": "Company Name",
-    "period": "2024 - Present",
-    "description": "Placeholder for experience details. Add your work experience here.",
-    "technologies": ["React", "Node.js", "MongoDB"]
+    "title": "Project Developer Intern",
+    "company": "Barani Ferrocast Pvt. Ltd., Coimbatore",
+    "period": "Internship",
+    "description": "Developed a computer vision-based anomaly detection system for automated quality assurance of casting cores using Python, OpenCV, and CNN models. Designed and deployed a local inspection pipeline to reduce manual inspection effort and improve industrial quality assurance workflows.",
+    "technologies": [
+      "Python",
+      "OpenCV",
+      "CNN",
+      "Flask",
+      "Computer Vision"
+    ]
   },
   {
     "id": 2,
-    "title": "Frontend Developer",
-    "company": "Previous Company",
-    "period": "2023 - 2024",
-    "description": "Placeholder for previous experience details.",
-    "technologies": ["React", "TypeScript", "TailwindCSS"]
+    "title": "Web Developer Intern",
+    "company": "Altursity Tech Solutions, Chennai",
+    "period": "Internship",
+    "description": "Collaborated with the web development team to build a responsive coffee shop web application integrated with AI chatbot functionality. Developed frontend components and interactive UI features while gaining practical exposure to responsive design and collaborative development workflows.",
+    "technologies": [
+      "React.js",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Responsive Design"
+    ]
   }
 ]
