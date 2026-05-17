@@ -72,7 +72,7 @@ const AchievementsAndCertifications = () => {
                 whileHover="hover"
                 className="
                   glass
-                  rounded-2xl
+                  rounded-[32px]
                   p-6
                   border
                   border-white/10
@@ -86,8 +86,10 @@ const AchievementsAndCertifications = () => {
                 {/* Glow */}
                 <div
                   className="
+                  
                     absolute
                     inset-0
+                    rounded-[32px]
                     opacity-0
                     hover:opacity-100
                     transition-opacity
@@ -99,43 +101,54 @@ const AchievementsAndCertifications = () => {
                   "
                 />
 
-                <motion.div
-                  variants={hoverCard}
-                  className="relative z-10"
+               <motion.div
+              variants={hoverCard}
+              className="relative z-10 flex flex-col gap-4 h-full"
                 >
                   {/* Icon */}
-                  <div
-                    className={`
-                      w-12 h-12
-                      rounded-xl
-                      flex
-                      items-center
-                      justify-center
-                      mb-4
-                      ${
-                        item.type === 'achievement'
-                          ? 'bg-yellow-500/10 text-yellow-400'
-                          : 'bg-accent/10 text-accent'
-                      }
-                    `}
-                  >
-                    <IconComponent className="w-5 h-5" />
-                  </div>
+             <div
+  className="
+    w-14
+    h-14
+  
+
+    flex
+    items-center
+    justify-center
+
+    border
+    border-neutral-300
+    dark:border-white/10
+
+    bg-white
+    dark:bg-[#111111]
+
+    shadow-md
+    dark:shadow-none
+
+    transition-all
+    duration-300
+  "
+>
+  <IconComponent className="w-5 h-5" />
+</div>
 
                   {/* Title */}
-                  <h3 className="text-sm font-semibold leading-snug p-8 m-10">
+                  <h3 className="text-lg font-semibold leading-snug">
                     {item.title}
                   </h3>
 
                   {/* Issuer */}
-                  <p className="text-sm text-gray-400 p-8 m-10">
+                  <p className="text-sm text-gray-400" >
                     {item.issuer}
                   </p>
 
                   {/* Description */}
-                  <p className="text-sm text-gray-500 leading-relaxed p-8">
-                    {item.description}
-                  </p>
+                  <p className="text-sm text-gray-500 ">
+            {item.description}
+  </p>
+
+                  
                 </motion.div>
               </motion.div>
             );
