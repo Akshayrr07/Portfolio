@@ -1,23 +1,56 @@
 [
   {
     "id": 1,
-    "title": "AWS Certified Developer",
-    "issuer": "Amazon Web Services",
-    "date": "2024",
-    "credentialId": "#"
+    "type": "certification",
+    "title": "Java Programming Certification",
+    "issuer": "IDM Techpark",
+    "description": "Covered core Java programming concepts, object-oriented programming, and problem-solving fundamentals.",
+    "icon": "Award",
+    "year": ""
   },
   {
     "id": 2,
-    "title": "TensorFlow Developer Certificate",
-    "issuer": "Google",
-    "date": "2023",
-    "credentialId": "#"
+    "type": "certification",
+    "title": "Data Structures and Algorithms Certification",
+    "issuer": "Finest Coder",
+    "description": "Focused on data structures, algorithms, and problem-solving techniques using Python.",
+    "icon": "BadgeCheck",
+    "year": ""
   },
   {
     "id": 3,
-    "title": "Meta Frontend Developer",
-    "issuer": "Meta",
-    "date": "2023",
-    "credentialId": "#"
+    "type": "certification",
+    "title": "Python Bootcamp",
+    "issuer": "LetsUpgrade",
+    "description": "Completed hands-on training in Python programming and practical application development.",
+    "icon": "Code2",
+    "year": ""
+  },
+  {
+    "id": 4,
+    "type": "achievement",
+    "title": "HackerRank Gold Badges",
+    "issuer": "HackerRank",
+    "description": "Earned Gold Badges in Python, Java, and SQL through consistent coding practice.",
+    "icon": "Trophy",
+    "year": ""
+  },
+  {
+    "id": 5,
+    "type": "achievement",
+    "title": "Best Paper Award",
+    "issuer": "PSGCAS, Coimbatore",
+    "description": "Received Best Paper Award for research contribution in AI-based pneumonia detection.",
+    "icon": "Medal",
+    "year": ""
+  },
+  {
+    "id": 6,
+    "type": "achievement",
+    "title": "National Level Hackathon Organizer",
+    "issuer": "CODE REDEMPTION",
+    "description": "Organized and hosted a 24-hour national-level hackathon event.",
+    "icon": "Flag",
+    "year": ""
   }
 ]

@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
-import { fadeInUp } from '../animations/variants.jsx';
+import { pageTransition } from '../animations/variants.jsx';
 import CertificationsSection from '../components/sections/Certifications';
 
 const Certifications = () => {
   return (
     <motion.div
-      initial="hidden"
-      animate="visible"
-      exit="hidden"
-      variants={fadeInUp}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={pageTransition}
     >
       <CertificationsSection />
     </motion.div>
