@@ -5,7 +5,7 @@ const MainLayout = ({ children }) => {
   return (
     <div style={{ minHeight: '100vh' }}>
       <Navbar />
-      <main style={{ paddingTop: '80px' }}>
+      <main style={{ paddingTop: '96px' }}>
         {children}
       </main>
       <Footer />

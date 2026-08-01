@@ -62,7 +62,7 @@ const ProjectDetail = () => {
         </div>
       </motion.div>
 
-      <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
+      <motion.div variants={fadeInUp} className="flex flex-wrap gap-6">
         <a
           href={project.github}
           target="_blank"

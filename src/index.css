@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;700&family=League+Gothic&display=swap');
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --color-accent: #25D366;
+  --color-dark-bg: #0b0b0b;
+  --color-dark-card: #1a1a1a;
+}
+
 * {
   margin: 0;
   padding: 0;

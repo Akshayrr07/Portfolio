@@ -19,26 +19,26 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-[1200px] rounded-2xl border border-neutral-200/50 dark:border-white/10 bg-white/80 dark:bg-neutral-950/40 backdrop-blur-md shadow-lg shadow-neutral-200/20 dark:shadow-none transition-all duration-300">
-      <div className="px-6 py-3">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-[1280px] rounded-2xl border border-neutral-200/50 dark:border-white/10 bg-white/80 dark:bg-neutral-950/40 backdrop-blur-md shadow-lg shadow-neutral-200/20 dark:shadow-none transition-all duration-300">
+      <div className="px-8 md:px-12 py-4">
         <div className="flex items-center justify-between">
           <Link 
             to="/" 
-            className="text-2xl font-bold font-display tracking-wider text-neutral-900 dark:text-white hover:text-accent dark:hover:text-accent transition-colors outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg px-2"
+            className="text-2xl font-bold font-display tracking-wider text-neutral-900 dark:text-white hover:text-accent dark:hover:text-accent transition-colors outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg px-2 pt-[2px]"
           >
             AKSHAY RR
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
-            <div className="flex items-center gap-1 bg-neutral-100/50 dark:bg-white/5 p-1 rounded-xl border border-neutral-200/20 dark:border-white/5">
+          <div className="hidden md:flex items-center gap-8">
+            <div className="flex items-center gap-4 bg-neutral-100/50 dark:bg-white/5 p-1.5 rounded-xl border border-neutral-200/20 dark:border-white/5">
               {navLinks.map((link) => {
                 const isActive = location.pathname === link.path;
                 return (
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`relative px-4 py-2 text-sm font-semibold transition-colors duration-300 rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                    className={`relative px-5 py-2.5 text-[15px] font-semibold transition-colors duration-300 rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-accent shrink-0 ${
                       isActive
                         ? 'text-accent'
                         : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white'

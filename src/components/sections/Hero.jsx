@@ -5,7 +5,7 @@ const Hero = () => {
   const socialLinkClasses = 'p-3 rounded-full bg-neutral-100 dark:bg-white/5 backdrop-blur-md border border-neutral-200 dark:border-white/10 text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-200 dark:hover:bg-white/15 hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center outline-none focus-visible:ring-2 focus-visible:ring-accent';
 
   return (
-    <section className="min-h-[calc(100vh-80px)] flex items-center justify-center p-4 relative overflow-hidden">
+    <section className="min-h-[calc(100vh-96px)] flex items-center justify-center p-4 relative overflow-hidden">
       {/* Background Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-neutral-200/30 dark:to-neutral-950/50 pointer-events-none" />
       
@@ -18,7 +18,7 @@ const Hero = () => {
           FULL STACK DEVELOPER
         </p>
         
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-8 mb-12">
           <Button variant="primary" href="/projects">
             View Projects
           </Button>

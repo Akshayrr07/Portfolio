@@ -23,7 +23,7 @@ const Contact = () => {
             Available for internships, freelance work, and full-time opportunities.
           </p>
           
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
+          <div className="flex flex-wrap justify-center gap-8 mb-8">
             <Button variant="primary" href={socialData.email}>
               Email Me
             </Button>
