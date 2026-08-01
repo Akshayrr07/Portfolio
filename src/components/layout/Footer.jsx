@@ -1,26 +1,8 @@
 const Footer = () => {
-  const footerStyle = {
-    marginTop: '80px',
-    padding: '32px 0',
-    borderTop: '1px solid rgba(255, 255, 255, 0.05)',
-  };
-
-  const containerStyle = {
-    maxWidth: '1200px',
-    margin: '0 auto',
-    padding: '0 16px',
-    textAlign: 'center',
-  };
-
-  const pStyle = {
-    fontSize: '14px',
-    color: '#9ca3af',
-  };
-
   return (
-    <footer style={footerStyle}>
-      <div style={containerStyle}>
-        <p style={pStyle}>
+    <footer className="mt-20 py-8 border-t border-white/5 dark:border-white/5">
+      <div className="max-w-[1200px] mx-auto px-4 text-center">
+        <p className="text-sm text-gray-400">
           © 2026 Akshay RR — Built with React, Vite, & Framer Motion
         </p>
       </div>

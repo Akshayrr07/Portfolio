@@ -23,13 +23,13 @@ const About = () => {
           className="grid md:grid-cols-2 gap-12 items-center"
         >
           <motion.div variants={fadeInUp} className="space-y-6">
-            <p className="text-lg leading-relaxed text-gray-300">
+            <p className="text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
               Passionate Full Stack Developer focused on building scalable,
               responsive, and production-ready applications. Skilled in frontend,
               backend, and AI-powered systems with strong attention to UI/UX and
               system performance.
             </p>
-            <p className="text-lg leading-relaxed text-gray-300">
+            <p className="text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
               I specialize in creating modern web experiences using React,
               Node.js, and cutting-edge AI/ML technologies. My goal is to build
               applications that not only look great but also perform exceptionally.

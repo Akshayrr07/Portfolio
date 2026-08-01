@@ -38,11 +38,11 @@ const AchievementsAndCertifications = () => {
           viewport={{ once: true }}
           className="text-center mb-24"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-8">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 text-neutral-900 dark:text-white">
             Achievements & Certifications
           </h2>
 
-          <p className="text-gray-400 max-w-2xl mx-auto leading-loose text-sm md:text-base mb-8">
+          <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-loose text-sm md:text-base mb-8">
             Certifications, technical accomplishments, and competitive achievements
             reflecting continuous learning, leadership, and problem-solving expertise.
           </p>
@@ -75,7 +75,8 @@ const AchievementsAndCertifications = () => {
                   rounded-[32px]
                   p-6
                   border
-                  border-white/10
+                  border-neutral-200/60
+                  dark:border-white/10
                   relative
                   overflow-hidden
                   transition-all
@@ -108,43 +109,38 @@ const AchievementsAndCertifications = () => {
                   {/* Icon */}
              <div
   className="
-    w-14
-    h-14
-  
-
+    w-12
+    h-12
+    rounded-2xl
     flex
     items-center
     justify-center
-
     border
-    border-neutral-300
+    border-neutral-200
     dark:border-white/10
-
-    bg-white
+    bg-neutral-50
     dark:bg-[#111111]
-
-    shadow-md
+    shadow-sm
     dark:shadow-none
-
     transition-all
     duration-300
   "
 >
-  <IconComponent className="w-5 h-5" />
+  <IconComponent className="w-5 h-5 text-accent" />
 </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-semibold leading-snug">
+                  <h3 className="text-lg font-bold text-neutral-900 dark:text-white leading-snug">
                     {item.title}
                   </h3>
 
                   {/* Issuer */}
-                  <p className="text-sm text-gray-400" >
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400" >
                     {item.issuer}
                   </p>
 
                   {/* Description */}
-                  <p className="text-sm text-gray-500 ">
+                  <p className="text-sm text-neutral-600 dark:text-neutral-500 leading-relaxed">
             {item.description}
   </p>
 

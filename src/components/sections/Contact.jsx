@@ -13,13 +13,13 @@ const Contact = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="max-w-2xl mx-auto text-center glass rounded-2xl p-12"
+          className="max-w-2xl mx-auto text-center glass border border-neutral-200/60 dark:border-white/10 rounded-2xl p-12"
         >
-          <h2 className="text-4xl font-display font-bold mb-4">
+          <h2 className="text-4xl font-display font-bold mb-4 text-neutral-900 dark:text-white">
             Let's Build Something Amazing
           </h2>
           
-          <p className="text-lg text-gray-400 mb-8">
+          <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-8">
             Available for internships, freelance work, and full-time opportunities.
           </p>
           

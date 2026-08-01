@@ -2,84 +2,23 @@ import Button from '../common/Button';
 import { Code as GithubIcon, User as LinkedinIcon, Mail as MailIcon } from 'lucide-react';
 
 const Hero = () => {
-  const sectionStyle = {
-    minHeight: '100vh',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '16px',
-    position: 'relative',
-    overflow: 'hidden',
-  };
-
-  const backgroundStyle = {
-    position: 'absolute',
-    inset: 0,
-    background: 'linear-gradient(to bottom, transparent, transparent, rgba(11, 11, 11, 0.5))',
-    pointerEvents: 'none',
-  };
-
-  const containerStyle = {
-    maxWidth: '1200px',
-    margin: '0 auto',
-    textAlign: 'center',
-    position: 'relative',
-    zIndex: 10,
-  };
-
-  const h1Style = {
-    fontFamily: 'League Gothic, sans-serif',
-    fontWeight: '700',
-    fontSize: 'clamp(4rem, 12vw, 9rem)',
-    lineHeight: 1,
-    letterSpacing: '0.1em',
-    marginBottom: '16px',
-  };
-
-  const pStyle = {
-    fontSize: 'clamp(1rem, 2vw, 1.5rem)',
-    letterSpacing: '0.5em',
-    color: '#9ca3af',
-    marginBottom: '48px',
-  };
-
-  const buttonsStyle = {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    gap: '16px',
-    marginBottom: '48px',
-  };
-
-  const socialStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-    gap: '24px',
-  };
-
-  const socialLinkStyle = {
-    padding: '12px',
-    borderRadius: '50%',
-    background: 'rgba(255, 255, 255, 0.05)',
-    backdropFilter: 'blur(16px)',
-    border: '1px solid rgba(255, 255, 255, 0.1)',
-    transition: 'background 0.3s',
-  };
+  const socialLinkClasses = 'p-3 rounded-full bg-neutral-100 dark:bg-white/5 backdrop-blur-md border border-neutral-200 dark:border-white/10 text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-200 dark:hover:bg-white/15 hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center outline-none focus-visible:ring-2 focus-visible:ring-accent';
 
   return (
-    <section style={sectionStyle}>
-      <div style={backgroundStyle} />
+    <section className="min-h-[calc(100vh-80px)] flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Background Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-neutral-200/30 dark:to-neutral-950/50 pointer-events-none" />
       
-      <div style={containerStyle}>
-        <h1 style={h1Style}>
+      <div className="max-w-[1200px] mx-auto text-center relative z-10">
+        <h1 className="font-display font-bold text-[clamp(4rem,12vw,9rem)] leading-none tracking-wider mb-4 text-neutral-900 dark:text-white">
           AKSHAY RR
         </h1>
         
-        <p style={pStyle}>
+        <p className="text-[clamp(0.9rem,2.2vw,1.4rem)] tracking-[0.5em] text-neutral-500 dark:text-neutral-400 mb-12">
           FULL STACK DEVELOPER
         </p>
         
-        <div style={buttonsStyle}>
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           <Button variant="primary" href="/projects">
             View Projects
           </Button>
@@ -88,33 +27,27 @@ const Hero = () => {
           </Button>
         </div>
         
-        <div style={socialStyle}>
+        <div className="flex justify-center gap-6">
           <a
             href="#"
-            style={socialLinkStyle}
+            className={socialLinkClasses}
             aria-label="GitHub"
-            onMouseEnter={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.1)'}
-            onMouseLeave={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.05)'}
           >
-            <GithubIcon style={{ width: '24px', height: '24px' }} />
+            <GithubIcon className="w-6 h-6" />
           </a>
           <a
             href="#"
-            style={socialLinkStyle}
+            className={socialLinkClasses}
             aria-label="LinkedIn"
-            onMouseEnter={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.1)'}
-            onMouseLeave={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.05)'}
           >
-            <LinkedinIcon style={{ width: '24px', height: '24px' }} />
+            <LinkedinIcon className="w-6 h-6" />
           </a>
           <a
             href="mailto:your.email@example.com"
-            style={socialLinkStyle}
+            className={socialLinkClasses}
             aria-label="Email"
-            onMouseEnter={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.1)'}
-            onMouseLeave={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.05)'}
           >
-            <MailIcon style={{ width: '24px', height: '24px' }} />
+            <MailIcon className="w-6 h-6" />
           </a>
         </div>
       </div>

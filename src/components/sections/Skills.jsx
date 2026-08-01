@@ -36,7 +36,7 @@ const Skills = () => {
                     className="glass rounded-xl p-6 text-center transition-all"
                   >
                     <h4 className="font-semibold">{skill.name}</h4>
-                    <div className="mt-3 h-2 bg-white/10 rounded-full overflow-hidden">
+                    <div className="mt-3 h-2 bg-neutral-200 dark:bg-white/10 rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
@@ -45,7 +45,7 @@ const Skills = () => {
                         className="h-full bg-accent rounded-full"
                       />
                     </div>
-                    <p className="text-sm text-gray-400 mt-2">{skill.level}%</p>
+                    <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-2">{skill.level}%</p>
                   </motion.div>
                 ))}
               </div>

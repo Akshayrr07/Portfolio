@@ -1,41 +1,12 @@
 import { ArrowRight as ArrowRightIcon } from 'lucide-react';
 
 const Button = ({ children, variant = 'primary', onClick, href, className = '' }) => {
-  const baseStyle = {
-    position: 'relative',
-    minWidth: '170px',
-    height: '52px',
-    padding: '18px',
-    borderRadius: '12px',
-    cursor: 'pointer',
-    overflow: 'hidden',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '0.7rem',
-    fontWeight: 'bold',
-    fontSize: '16px',
-    transition: 'all 0.3s',
-    textDecoration: 'none',
-    border: 'none',
-  };
+  const baseClasses = 'relative min-w-[170px] h-[52px] px-6 rounded-xl cursor-pointer overflow-hidden flex items-center justify-center gap-2 font-bold text-base transition-all duration-300 transform hover:scale-105 active:scale-95 no-underline';
 
   const variants = {
-    primary: {
-      backgroundColor: '#25D366',
-      color: 'white',
-      border: '2px solid #25D366',
-    },
-    outline: {
-      backgroundColor: 'transparent',
-      color: '#25D366',
-      border: '2px solid #25D366',
-    },
-    glass: {
-      backgroundColor: 'rgba(255, 255, 255, 0.05)',
-      color: 'white',
-      border: '1px solid rgba(255, 255, 255, 0.1)',
-    },
+    primary: 'bg-accent text-white border-2 border-accent hover:bg-accent/90',
+    outline: 'bg-transparent text-accent border-2 border-accent hover:bg-accent/10',
+    glass: 'bg-white/5 text-white border border-white/10 hover:bg-white/10',
   };
 
   const Component = href ? 'a' : 'button';
@@ -44,15 +15,10 @@ const Button = ({ children, variant = 'primary', onClick, href, className = '' }
   return (
     <Component
       {...props}
-      style={{ ...baseStyle, ...variants[variant] }}
-      className={className}
-      onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
-      onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+      className={`${baseClasses} ${variants[variant]} ${className}`}
     >
       <span>{children}</span>
-      <ArrowRightIcon 
-        style={{ width: '18px', height: '18px' }} 
-      />
+      <ArrowRightIcon className="w-[18px] h-[18px] shrink-0" />
     </Component>
   );
 };

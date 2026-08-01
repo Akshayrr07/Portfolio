@@ -1,68 +1,32 @@
 import { useTheme } from '../../hooks/useTheme.jsx';
 import { Sun as SunIcon, Moon as MoonIcon } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const ThemeToggle = () => {
   const { isDark, toggleTheme } = useTheme();
 
-  const buttonStyle = {
-    position: 'relative',
-    width: '60px',
-    height: '34px',
-    borderRadius: '17px',
-    backgroundColor: '#1a1a1a',
-    border: '1px solid rgba(255, 255, 255, 0.1)',
-    transition: 'all 0.4s',
-    outline: 'none',
-    cursor: 'pointer',
-  };
-
-  const iconContainerStyle = {
-    position: 'absolute',
-    inset: 0,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  };
-
-  const sunIconStyle = {
-    width: '16px',
-    height: '16px',
-    color: '#fbbf24',
-    transition: 'opacity 0.4s',
-    opacity: isDark ? 0 : 1,
-  };
-
-  const moonIconStyle = {
-    width: '16px',
-    height: '16px',
-    color: '#60a5fa',
-    transition: 'opacity 0.4s',
-    opacity: isDark ? 1 : 0,
-  };
-
-  const toggleStyle = {
-    position: 'absolute',
-    top: '4px',
-    left: '4px',
-    width: '26px',
-    height: '26px',
-    borderRadius: '13px',
-    backgroundColor: 'white',
-    transition: 'transform 0.4s',
-    transform: isDark ? 'translateX(26px)' : 'translateX(0)',
-  };
-
   return (
     <button
       onClick={toggleTheme}
-      style={buttonStyle}
+      className="relative w-10 h-10 rounded-xl border border-neutral-200/50 dark:border-white/10 bg-neutral-100/50 dark:bg-white/5 hover:bg-neutral-200/50 dark:hover:bg-white/10 transition-all duration-300 cursor-pointer overflow-hidden flex items-center justify-center focus-visible:ring-2 focus-visible:ring-accent outline-none"
       aria-label="Toggle theme"
     >
-      <div style={iconContainerStyle}>
-        <SunIcon style={sunIconStyle} />
-        <MoonIcon style={moonIconStyle} />
-      </div>
-      <div style={toggleStyle} />
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.div
+          key={isDark ? 'dark' : 'light'}
+          initial={{ y: 15, opacity: 0, rotate: 45 }}
+          animate={{ y: 0, opacity: 1, rotate: 0 }}
+          exit={{ y: -15, opacity: 0, rotate: -45 }}
+          transition={{ duration: 0.2 }}
+          className="flex items-center justify-center"
+        >
+          {isDark ? (
+            <SunIcon className="w-5 h-5 text-amber-400" />
+          ) : (
+            <MoonIcon className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+          )}
+        </motion.div>
+      </AnimatePresence>
     </button>
   );
 };
