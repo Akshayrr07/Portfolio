@@ -9,6 +9,7 @@ const Certifications = () => {
       animate="animate"
       exit="exit"
       variants={pageTransition}
+      className="w-full flex-1 flex flex-col justify-start items-center"
     >
       <CertificationsSection />
     </motion.div>

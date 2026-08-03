@@ -27,8 +27,16 @@ const iconMap = {
 
 const AchievementsAndCertifications = () => {
   return (
-    <section className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full min-h-screen flex flex-col justify-start items-center px-4 sm:px-8 lg:px-12 pt-28 sm:pt-36 pb-20 sm:pb-28 relative overflow-hidden">
+      {/* Background Lighting Spotlights */}
+      <div className="absolute top-1/3 right-1/4 w-[450px] h-[450px] bg-accent/10 dark:bg-accent/15 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-10 left-10 w-[300px] h-[300px] bg-accent/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+
+      {/* Grid Pattern Overlay */}
+      <div className="absolute inset-0 bg-[radial-gradient(#d1d5db_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none -z-10 opacity-50" />
+
+      {/* Main Container */}
+      <div className="max-w-[1280px] w-full mx-auto flex flex-col justify-start items-center px-4 sm:px-6">
 
         {/* Heading */}
         <motion.div
@@ -36,13 +44,14 @@ const AchievementsAndCertifications = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="text-center mb-24"
+          className="text-center flex flex-col items-center gap-3 w-full max-w-3xl"
+          style={{ marginBottom: '64px' }}
         >
-          <h2 className="text-4xl md:text-5xl font-sans font-extrabold tracking-tight mb-8 text-neutral-900 dark:text-white">
+          <h2 className="font-sans font-extrabold text-4xl sm:text-5xl lg:text-[54px] tracking-tight text-neutral-900 dark:text-white leading-tight">
             Achievements & Certifications
           </h2>
 
-          <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-loose text-sm md:text-base mb-8">
+          <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed font-normal max-w-xl">
             Certifications, technical accomplishments, and competitive achievements
             reflecting continuous learning, leadership, and problem-solving expertise.
           </p>
@@ -59,8 +68,11 @@ const AchievementsAndCertifications = () => {
             grid-cols-1
             sm:grid-cols-2
             lg:grid-cols-3
-            gap-8
+            gap-6
+            sm:gap-8
+            w-full
           "
+          style={{ marginTop: '16px' }}
         >
           {data.map((item) => {
             const IconComponent = iconMap[item.icon] || Award;
@@ -72,8 +84,9 @@ const AchievementsAndCertifications = () => {
                 whileHover="hover"
                 className="
                   glass
-                  rounded-[32px]
+                  rounded-2xl
                   p-6
+                  sm:p-8
                   border
                   border-neutral-200/60
                   dark:border-white/10
@@ -82,15 +95,18 @@ const AchievementsAndCertifications = () => {
                   transition-all
                   duration-300
                   h-full
+                  flex
+                  flex-col
+                  justify-center
+                  items-center
                 "
               >
                 {/* Glow */}
                 <div
                   className="
-                  
                     absolute
                     inset-0
-                    rounded-[32px]
+                    rounded-2xl
                     opacity-0
                     hover:opacity-100
                     transition-opacity
@@ -102,49 +118,49 @@ const AchievementsAndCertifications = () => {
                   "
                 />
 
-               <motion.div
-              variants={hoverCard}
-              className="relative z-10 flex flex-col gap-4 h-full"
+                <motion.div
+                  variants={hoverCard}
+                  className="relative z-10 flex flex-col items-center justify-center text-center gap-4 h-full w-full"
                 >
                   {/* Icon */}
-             <div
-  className="
-    w-12
-    h-12
-    rounded-2xl
-    flex
-    items-center
-    justify-center
-    border
-    border-neutral-200
-    dark:border-white/10
-    bg-neutral-50
-    dark:bg-[#111111]
-    shadow-sm
-    dark:shadow-none
-    transition-all
-    duration-300
-  "
->
-  <IconComponent className="w-5 h-5 text-accent" />
-</div>
+                  <div
+                    className="
+                      w-12
+                      h-12
+                      rounded-xl
+                      flex
+                      items-center
+                      justify-center
+                      border
+                      border-neutral-200
+                      dark:border-white/10
+                      bg-neutral-50
+                      dark:bg-[#111111]
+                      shadow-sm
+                      dark:shadow-none
+                      transition-all
+                      duration-300
+                      mx-auto
+                    "
+                  >
+                    <IconComponent className="w-5 h-5 text-accent" />
+                  </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-bold text-neutral-900 dark:text-white leading-snug">
+                  <h3 className="text-lg sm:text-xl font-extrabold text-neutral-900 dark:text-white leading-snug">
                     {item.title}
                   </h3>
 
                   {/* Issuer */}
-                  <p className="text-sm text-neutral-500 dark:text-neutral-400" >
+                  <p className="text-xs sm:text-sm font-semibold text-accent uppercase tracking-wider">
                     {item.issuer}
                   </p>
 
                   {/* Description */}
-                  <p className="text-sm text-neutral-600 dark:text-neutral-500 leading-relaxed">
-            {item.description}
-  </p>
+                  <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed font-normal">
+                    {item.description}
+                  </p>
 
-                  
                 </motion.div>
               </motion.div>
             );
