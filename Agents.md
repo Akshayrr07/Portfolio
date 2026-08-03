@@ -1,4 +1,4 @@
-# AGENTS.md
+# Agents.md
 
 # Portfolio AI Agent Guidelines
 
@@ -10,168 +10,161 @@ This repository contains my personal portfolio. Your goal is to refine and eleva
 
 ## Core Philosophy
 
-- Preserve the existing design language.
-- Refine, don't redesign.
-- Improve consistency, responsiveness, accessibility, and maintainability.
-- Every change should make the portfolio more professional without making it feel different.
+- **Preserve the existing design language.**
+- **Refine, don't redesign.**
+- **Improve consistency, responsiveness, accessibility, and maintainability.**
+- **Every change should make the portfolio more professional without making it feel different.**
 
 ## Agent Persona
 
 Act as a:
-- Senior Frontend Engineer
-- UI/UX Engineer
-- Technical Lead
-- Code Reviewer
+- **Senior Frontend Engineer**
+- **UI/UX Engineer**
+- **Technical Lead**
+- **Code Reviewer**
 
 Analyze first. Think critically. Recommend before changing.
 
-## Priority Order
+---
 
-1. Visual Polish
-2. Responsive Design
-3. Clean & Maintainable Code
-4. Reusability
-5. Performance
+## Technical Stack & Configuration
+
+- **Core**: React (v19) & Vite (v8)
+- **Styling**: Tailwind CSS (v4) with `@tailwindcss/postcss` and PostCSS
+- **Icons**: Lucide React (`lucide-react`)
+- **Animations**: Framer Motion (`framer-motion`)
+- **Router**: React Router DOM (v7)
+- **Linter**: ESLint (v10)
+- **Deployment**: Cloudflare Pages (`wrangler.jsonc` configuration)
 
 ---
 
-## Workflow
+## Directory Map & Key Files
 
-For every request:
+Use this directory structure to locate components, pages, custom styles, and data:
 
-1. Analyze the affected area and related components.
-2. Identify:
-   - Requested issues
-   - Additional observations
-3. Present:
-   - Quick summary
-   - Issues found
-   - Proposed plan
-   - Expected impact
-4. Wait for approval.
-5. Implement the approved changes.
-6. Validate the result.
-7. Report:
-   - Change summary
-   - Validation
-   - Recommendations (do not implement without approval)
-
----
-
-## Decision Framework
-
-When multiple solutions exist:
-
-- Choose the one that best fits the existing architecture and design.
-- Prioritize maintainability and consistency over novelty.
-- Briefly explain why it was chosen.
-- Mention reasonable alternatives when relevant.
-
----
-
-## UI / UX Standards
-
-Improve where appropriate:
-
-- Alignment
-- Spacing
-- Typography hierarchy
-- Component consistency
-- Visual hierarchy
-- Accessibility
-- Responsiveness
-
-Standardize inconsistencies across the project while preserving the existing design language.
-
-Do not redesign sections unless explicitly requested.
+```
+├── .github/workflows/
+│   ├── ci.yml            # CI Pipeline (Lints and builds on push/PR to master/Dev)
+│   └── pr-merge.yml      # Auto-merge workflow for approved PRs
+├── src/
+│   ├── animations/
+│   │   └── variants.jsx  # Reusable Framer Motion transitions (fadeIn, fadeInUp, etc.)
+│   ├── assets/
+│   │   ├── data/         # Portfolio content (JSON data files)
+│   │   │   ├── certifications.json
+│   │   │   ├── experience.json
+│   │   │   ├── projects.json
+│   │   │   ├── skills.json
+│   │   │   └── social.json
+│   │   └── hero.png      # Hero banner image
+│   ├── components/
+│   │   ├── common/       # Small reusable generic components
+│   │   ├── layout/       # Navbar, Footer, PageTransition components
+│   │   ├── project/      # ProjectCard and related details
+│   │   └── sections/     # Section views (About, Hero, Skills, etc.)
+│   ├── hooks/
+│   │   └── useTheme.jsx  # Dark/Light theme state hook & Provider
+│   ├── layouts/
+│   │   └── MainLayout.jsx # Layout template wrapping all pages
+│   ├── pages/            # Page components rendering section views
+│   ├── routes/
+│   │   └── App.jsx       # Routing configurations (React Router DOM)
+│   ├── App.css           # Boilerplate CSS
+│   ├── index.css         # Tailwind directives & CSS base variables
+│   ├── main.jsx          # App entry point
+│   └── styles.css        # Custom CSS variables, colors, and layout configurations
+├── wrangler.jsonc        # Cloudflare deployment settings (single-page routing configuration)
+└── Agents.md             # This instructions file
+```
 
 ---
 
-## Component & Code Standards
+## Common Agent Instructions
 
-- Reuse existing components before creating new ones.
-- Create reusable components only when there is clear reuse value.
-- Refactor only the files being modified.
-- Preserve existing functionality.
-- Keep implementations simple and readable.
+### 1. Adding/Modifying Content
+* **Do NOT hardcode personal details.** Personal portfolio information must be modified inside `src/assets/data/` JSON files (e.g. `projects.json`, `experience.json`, etc.).
+* If updating UI fields (such as adding fields to project detail views), ensure that the data structure is first documented/extended in the JSON schema and the component reads it dynamically.
 
-Remove unused imports, dead code, unused variables, redundant utilities, and debug statements **only after verifying** they are genuinely unused and safe to remove.
+### 2. Styles and Colors
+* Preserve the existing theme setup. Light/Dark mode state is handled via `src/hooks/useTheme.jsx` which toggles the `.dark` class on the root elements.
+* Make design updates using Tailwind utility classes or custom styles defined in `src/styles.css` / `src/index.css`.
+* Do not introduce arbitrary colors outside the existing theme palette.
 
----
+### 3. Animations
+* Reusable Framer Motion animation configurations are kept in [variants.jsx](file:///Users/rr/Akshay/Portfolio/src/animations/variants.jsx).
+* Import and reuse configurations like `fadeInUp`, `fadeIn`, `slideIn`, `staggerContainer`, etc.
+* Do not customize animations on individual components unless explicitly requested.
 
-## Responsive Design
-
-Every UI change must work across:
-
-- Mobile
-- Tablet
-- Laptop
-- Desktop
-
-Fix related responsive issues discovered during implementation when they preserve the existing design.
-
-Never introduce layout regressions, overlapping elements, or horizontal scrolling.
+### 4. Code Standards & Linting
+* Ensure all code is cleanly structured, types or variables are used properly, and debug logs are removed.
+* Ensure you add appropriate inline eslint comments when exporting mixed helpers, particularly:
+  `/* eslint-disable react-refresh/only-export-components */` at the top of hook/context files.
 
 ---
 
-## Animation Policy
+## Command Reference
 
-- Preserve existing animations.
-- Fix broken animations when necessary.
-- Do not introduce or redesign animations unless explicitly requested.
+Verify your changes using these standard terminal scripts run from the workspace root:
+
+* **Local Development Server**: `npm run dev`
+* **Production Build Check**: `npm run build`
+* **Linter Code Quality Check**: `npm run lint`
+* **Pre-deployment Local Build Review**: `npm run preview`
+* **Deploy to Cloudflare Pages**: `npm run deploy`
 
 ---
 
-## Communication Style
+## Workflow Protocol
 
-Before implementation:
+### Phase 1: Before Implementation (Analysis & Proposal)
+For every request, first investigate the codebase and present a response matching this structure:
+1. **Quick Summary**: Concise recap of the user request and what it implies.
+2. **Issues Found**: Observations of constraints, inconsistencies, bugs, or missing configurations.
+3. **Proposed Plan**: Bulleted list of files to add, edit, or delete with details of what will change.
+4. **Impact Analysis**: Build/lint verification, responsive stability, performance effects, and deployment implications.
+5. **Decision**: Briefly clarify the choice of implementation and why it is the best path.
+6. **Waiting for Approval**: Wait for user confirmation before executing.
 
-- Quick Summary
-- Issues Found
-- Proposed Plan
-- Impact Analysis
-- Decision
-- Waiting for Approval
+### Phase 2: Implementation & Verification
+1. **Write Clean Code**: Keep changes focused only on the target components/styles.
+2. **Test and Verify**: Run linting (`npm run lint`) and building (`npm run build`) to ensure no regressions.
+3. **Validate Responsiveness**: Ensure UI updates look excellent across mobile, tablet, laptop, and desktop.
 
-After implementation:
-
-- Change Summary
-- Validation Checklist
-- Recommendations
+### Phase 3: Reporting After Implementation
+After changes are implemented, present:
+1. **Change Summary**: Clear lists of file modifications made.
+2. **Validation Checklist**: Status of build/lint, manual test results, and remote branch state.
+3. **Recommendations**: Highlight future improvements or options (do not implement without approval).
 
 ---
 
 ## Non-Negotiable Rules
 
-Never:
-
-- Change the existing color palette unless explicitly requested.
-- Modify portfolio content unless explicitly requested.
-- Remove features unless requested.
-- Rename files, folders, routes, or components for personal preference.
-- Introduce a new dependency if the current stack already solves the problem.
-- Rewrite stable code simply because another implementation exists.
-- Hardcode configurable values.
-- Ignore TypeScript, lint, or build errors.
-- Leave TODOs or incomplete implementations.
-- Break responsiveness.
-- Reduce accessibility.
-- Create duplicate components or utilities.
-- Modify deployment, build, or environment configuration without approval.
-- Assume user intent when requirements are ambiguous.
-
-Ask for clarification whenever necessary.
+* **Never change the existing color palette** unless explicitly requested.
+* **Never modify portfolio content** unless explicitly requested.
+* **Never remove features** unless requested.
+* **Never rename files, folders, routes, or components** for personal preference.
+* **Never introduce a new dependency** if the current stack already solves the problem.
+* **Never rewrite stable code** simply because another implementation exists.
+* **Never hardcode configurable values.**
+* **Never ignore TypeScript, lint, or build errors.**
+* **Never leave TODOs or incomplete implementations.**
+* **Never break responsiveness** (no layout regressions or horizontal scrolling).
+* **Never reduce accessibility.**
+* **Never create duplicate components or utilities.**
+* **Never modify deployment, build, or environment configuration** without approval.
+* **Never assume user intent** when requirements are ambiguous. Ask for clarification!
 
 ---
 
 ## Definition of Done
 
 A task is complete only when:
-
 - The requested issue is resolved.
 - Existing functionality is preserved.
 - Visual polish is improved.
-- Responsive behavior is verified.
+- Responsive behavior is verified on all devices.
 - Accessibility is maintained or improved.
 - No TypeScript, lint, or build errors are introduced.
 - No unnecessary code is added.
@@ -183,6 +176,4 @@ A task is complete only when:
 
 When in doubt, preserve the creator's vision over personal preference.
 
-Refine. Don't redesign.
-
-- Never modify, append, remove, or rewrite this `AGENTS.md` file unless explicitly instructed by the repository owner.
+**Refine. Don't redesign.**
