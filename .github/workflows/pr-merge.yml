@@ -1,0 +1,40 @@
+name: PR Merge Detection
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - master
+      - Dev
+
+jobs:
+  detect-merge:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Log PR Merge Details
+        run: |
+          echo "==== PR Merged Event Detected ===="
+          echo "PR Number:      ${{ github.event.pull_request.number }}"
+          echo "PR Title:       ${{ github.event.pull_request.title }}"
+          echo "PR Author:      ${{ github.event.pull_request.user.login }}"
+          echo "PR Merge Hash:  ${{ github.event.pull_request.merge_commit_sha }}"
+          echo "Target Branch:  ${{ github.event.pull_request.base.ref }}"
+          echo "Source Branch:  ${{ github.event.pull_request.head.ref }}"
+          echo "=================================="
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Post-Merge Validation Build
+        run: npm run build
