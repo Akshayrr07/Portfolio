@@ -2,9 +2,15 @@
   {
     "id": 1,
     "title": "Project Developer Intern",
-    "company": "Barani Ferrocast Pvt. Ltd., Coimbatore",
-    "period": "Internship",
-    "description": "Developed a computer vision-based anomaly detection system for automated quality assurance of casting cores using Python, OpenCV, and CNN models. Designed and deployed a local inspection pipeline to reduce manual inspection effort and improve industrial quality assurance workflows.",
+    "company": "Barani Ferrocast Pvt. Ltd.",
+    "location": "Coimbatore, TN",
+    "dateRange": "Jun 2025 – Aug 2025",
+    "type": "Internship",
+    "highlights": [
+      "Developed a computer vision-based anomaly detection system for industrial casting core quality assurance.",
+      "Engineered CNN models with Python & OpenCV to automate real-time defect identification.",
+      "Deployed a local inspection pipeline using Flask, reducing manual QA effort by 40%."
+    ],
     "technologies": [
       "Python",
       "OpenCV",
@@ -16,9 +22,15 @@
   {
     "id": 2,
     "title": "Web Developer Intern",
-    "company": "Altursity Tech Solutions, Chennai",
-    "period": "Internship",
-    "description": "Collaborated with the web development team to build a responsive coffee shop web application integrated with AI chatbot functionality. Developed frontend components and interactive UI features while gaining practical exposure to responsive design and collaborative development workflows.",
+    "company": "Altursity Tech Solutions",
+    "location": "Chennai, TN",
+    "dateRange": "Dec 2024 – Feb 2025",
+    "type": "Internship",
+    "highlights": [
+      "Built a responsive coffee shop web application using React.js and dynamic UI components.",
+      "Integrated an AI chatbot assistant for real-time customer inquiries and automated ordering flows.",
+      "Optimized frontend component structure for responsive design across mobile and desktop devices."
+    ],
     "technologies": [
       "React.js",
       "JavaScript",
