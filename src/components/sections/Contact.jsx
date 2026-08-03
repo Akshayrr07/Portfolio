@@ -32,7 +32,7 @@ const Contact = () => {
             </Button>
           </div>
           
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4 mt-6 sm:mt-8">
             <SocialLink platform="github" href={socialData.github} label="GitHub" />
             <SocialLink platform="linkedin" href={socialData.linkedin} label="LinkedIn" />
             <SocialLink platform="email" href={socialData.email} label="Email" />
