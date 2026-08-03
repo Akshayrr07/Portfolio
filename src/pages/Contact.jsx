@@ -9,6 +9,7 @@ const Contact = () => {
       animate="visible"
       exit="hidden"
       variants={fadeInUp}
+      className="w-full flex-1 flex flex-col justify-center items-center"
     >
       <ContactSection />
     </motion.div>

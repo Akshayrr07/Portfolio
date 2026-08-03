@@ -12,7 +12,7 @@ const Experience = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="text-4xl font-display font-bold mb-12"
+          className="text-4xl font-sans font-extrabold tracking-tight mb-12"
         >
           Experience
         </motion.h2>
