@@ -1,14 +1,18 @@
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
+import { useLocation } from 'react-router-dom';
 
 const MainLayout = ({ children }) => {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
   return (
-    <div style={{ minHeight: '100vh' }}>
+    <div className="min-h-screen flex flex-col justify-between">
       <Navbar />
-      <main style={{ paddingTop: '96px' }}>
+      <main className="pt-24 flex-1 flex flex-col justify-center">
         {children}
       </main>
-      <Footer />
+      {!isHome && <Footer />}
     </div>
   );
 };
