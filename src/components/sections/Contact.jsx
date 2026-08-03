@@ -7,7 +7,7 @@ import { Zap } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <section className="w-full min-h-[calc(100vh-80px)] flex flex-col justify-center items-center px-4 sm:px-8 lg:px-12 py-12 sm:py-16 relative overflow-hidden">
+    <section className="w-full min-h-[calc(100vh-80px)] flex flex-col justify-center items-center px-4 sm:px-8 lg:px-12 pt-28 sm:pt-36 pb-16 sm:pb-20 relative overflow-hidden">
       {/* Grid Pattern Overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(#d1d5db_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none -z-10 opacity-50" />
 

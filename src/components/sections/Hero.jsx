@@ -64,7 +64,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="w-full min-h-screen flex flex-col justify-between items-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-12 lg:pb-24 relative overflow-hidden">
+    <section className="w-full min-h-screen flex flex-col justify-between items-center px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 pb-12 lg:pb-24 relative overflow-hidden">
       {/* Background Lighting Spotlights */}
       <div className="absolute top-1/3 right-1/4 w-[450px] h-[450px] bg-accent/10 dark:bg-accent/15 rounded-full blur-[140px] pointer-events-none -z-10" />
       <div className="absolute top-10 left-10 w-[300px] h-[300px] bg-accent/10 rounded-full blur-[120px] pointer-events-none -z-10" />

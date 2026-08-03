@@ -32,7 +32,7 @@ const ProjectDetail = () => {
       initial="hidden"
       animate="visible"
       exit="hidden"
-      className="container mx-auto px-4 py-24"
+      className="container mx-auto px-4 pt-28 sm:pt-36 pb-24"
     >
       <motion.div variants={fadeInUp} className="mb-8">
         <Link to="/projects" className="inline-flex items-center gap-2 text-neutral-500 dark:text-neutral-400 hover:text-accent transition-colors outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg px-2">
