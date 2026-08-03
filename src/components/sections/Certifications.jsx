@@ -38,7 +38,7 @@ const AchievementsAndCertifications = () => {
           viewport={{ once: true }}
           className="text-center mb-24"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 text-neutral-900 dark:text-white">
+          <h2 className="text-4xl md:text-5xl font-sans font-extrabold tracking-tight mb-8 text-neutral-900 dark:text-white">
             Achievements & Certifications
           </h2>
 
