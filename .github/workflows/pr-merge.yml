@@ -1,38 +1,24 @@
-name: PR Auto Merge
+name: Auto-Merge Passed PRs
 
 on:
-  workflow_run:
-    workflows: ["CI Pipeline"]
-    types:
-      - completed
-
-permissions:
-  contents: write
-  pull-requests: write
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
 
 jobs:
-  auto-merge:
-    if: >
-      github.event.workflow_run.conclusion == 'success' &&
-      github.event.workflow_run.event == 'pull_request'
+  automerge:
+    name: Enable Auto-Merge
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
 
     steps:
-      - name: Auto-merge PR
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🤖 Enable GitHub Auto-Merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
         run: |
-          PR_URL="${{ github.event.workflow_run.pull_requests[0].html_url }}"
-          if [ -z "$PR_URL" ] || [ "$PR_URL" = "null" ]; then
-            echo "Pull request details not found in payload. Searching via CLI..."
-            PR_URL=$(gh pr list --repo ${{ github.repository }} --head "${{ github.event.workflow_run.head_branch }}" --json url --jq '.[0].url')
-          fi
-          
-          if [ -n "$PR_URL" ] && [ "$PR_URL" != "null" ]; then
-            echo "Attempting to merge Pull Request: $PR_URL"
-            gh pr merge "$PR_URL" --repo ${{ github.repository }} --merge --auto || gh pr merge "$PR_URL" --repo ${{ github.repository }} --merge
-          else
-            echo "No open pull request found for branch ${{ github.event.workflow_run.head_branch }}"
-          fi
-
-
+          gh pr merge "$PR_URL" --auto --squash || gh pr merge "$PR_URL" --auto --merge
