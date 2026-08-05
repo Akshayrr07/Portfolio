@@ -84,8 +84,11 @@ const Hero = () => {
             className="flex flex-col items-center lg:items-start text-center lg:text-left gap-6 sm:gap-8 lg:gap-9"
           >
             {/* 1. Minimal Focal Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/10 dark:bg-accent/15 border border-accent/20 text-accent text-[12px] sm:text-[13px] font-semibold tracking-wide">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            <div 
+              className="inline-flex items-center gap-2.5 rounded-full bg-accent/10 dark:bg-accent/15 border border-accent/25 text-accent text-[12px] sm:text-[13px] font-semibold tracking-wide"
+              style={{ paddingLeft: '20px', paddingRight: '20px', paddingTop: '10px', paddingBottom: '10px' }}
+            >
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
               <span>Available for new opportunities</span>
             </div>
 
@@ -200,10 +203,11 @@ const Hero = () => {
             return (
               <div
                 key={index}
-                className="rounded-2xl bg-white/90 dark:bg-[#141414]/90 border border-neutral-200/80 dark:border-neutral-800/90 backdrop-blur-md p-4 sm:p-5 flex items-center gap-3.5 sm:gap-4 shadow-md dark:shadow-lg hover:border-accent/50 transition-all duration-300 transform hover:-translate-y-1"
+                className="rounded-2xl bg-white/90 dark:bg-[#141414]/90 border border-neutral-200/80 dark:border-neutral-800/90 backdrop-blur-md flex items-center gap-4 sm:gap-5 shadow-md dark:shadow-lg hover:border-accent/50 transition-all duration-300 transform hover:-translate-y-1"
+                style={{ padding: '24px 28px' }}
               >
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-neutral-100 dark:bg-[#112217] border border-neutral-200 dark:border-emerald-900/40 flex items-center justify-center text-accent shrink-0 shadow-sm p-2.5">
-                  <IconComp className="w-5 h-5" />
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-neutral-100 dark:bg-[#112217] border border-neutral-200 dark:border-emerald-900/40 flex items-center justify-center text-accent shrink-0 shadow-sm p-2.5">
+                  <IconComp className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div className="min-w-0">
                   <div className="text-xl sm:text-2xl lg:text-[24px] font-extrabold text-neutral-900 dark:text-white tracking-tight truncate">

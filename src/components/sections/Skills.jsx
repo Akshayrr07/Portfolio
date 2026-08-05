@@ -46,7 +46,7 @@ const formatCategoryTitle = (key) => {
 
 const Skills = () => {
   return (
-    <section className="w-full min-h-screen flex flex-col justify-start items-center px-4 sm:px-8 lg:px-12 pt-20 sm:pt-24 pb-16 sm:pb-24 relative overflow-hidden">
+    <section className="w-full min-h-screen flex flex-col justify-start items-center px-4 sm:px-8 lg:px-12 pt-36 sm:pt-44 lg:pt-48 pb-24 sm:pb-32 relative overflow-hidden">
       {/* Background Lighting Spotlights - Soft & Blended Natural Ambient Glow */}
       <div className="absolute top-1/4 right-1/4 w-[550px] h-[550px] bg-accent/[0.06] dark:bg-accent/[0.08] rounded-full blur-[180px] pointer-events-none -z-10" />
       <div className="absolute bottom-10 left-10 w-[400px] h-[400px] bg-accent/[0.04] rounded-full blur-[150px] pointer-events-none -z-10" />
