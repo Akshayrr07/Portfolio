@@ -42,17 +42,17 @@ a:hover {
 
 /* Default Section spacings */
 section {
-  padding-top: 84px;
-  padding-bottom: 80px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-top: 160px;
+  padding-bottom: 96px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 @media (max-width: 1024px) {
   section {
-    padding-top: 84px;
-    padding-bottom: 48px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-top: 136px;
+    padding-bottom: 64px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

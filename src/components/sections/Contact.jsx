@@ -52,12 +52,12 @@ const Contact = () => {
             </div>
           </div>
           
-          {/* 3. Social Links Row (with Bottom Margin/Padding) */}
-          <div className="w-full pt-8 sm:pt-10 pb-4 sm:pb-6 border-t border-neutral-200/50 dark:border-neutral-800/60 flex flex-col items-center gap-5">
+          {/* 3. Social Links Row (with Increased Internal Padding) */}
+          <div className="w-full pt-10 sm:pt-12 pb-6 sm:pb-8 border-t border-neutral-200/50 dark:border-neutral-800/60 flex flex-col items-center gap-6 sm:gap-7">
             <p className="text-xs font-bold tracking-widest text-neutral-400 dark:text-neutral-500 uppercase">
               Or connect via social platforms
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6">
+            <div className="flex flex-wrap justify-center items-center gap-5 sm:gap-7">
               <SocialLink platform="github" href={socialData.github} label="GitHub" />
               <SocialLink platform="linkedin" href={socialData.linkedin} label="LinkedIn" />
               <SocialLink platform="email" href={socialData.email} label="Email" />

@@ -27,7 +27,7 @@ const iconMap = {
 
 const AchievementsAndCertifications = () => {
   return (
-    <section className="w-full min-h-screen flex flex-col justify-start items-center px-4 sm:px-8 lg:px-12 pt-28 sm:pt-36 pb-20 sm:pb-28 relative overflow-hidden">
+    <section className="w-full min-h-screen flex flex-col justify-start items-center px-4 sm:px-8 lg:px-12 pt-36 sm:pt-44 lg:pt-48 pb-24 sm:pb-32 relative overflow-hidden">
       {/* Background Lighting Spotlights */}
       <div className="absolute top-1/3 right-1/4 w-[450px] h-[450px] bg-accent/10 dark:bg-accent/15 rounded-full blur-[140px] pointer-events-none -z-10" />
       <div className="absolute top-10 left-10 w-[300px] h-[300px] bg-accent/10 rounded-full blur-[120px] pointer-events-none -z-10" />
@@ -82,24 +82,8 @@ const AchievementsAndCertifications = () => {
                 key={item.id}
                 variants={fadeInUp}
                 whileHover="hover"
-                className="
-                  glass
-                  rounded-2xl
-                  p-6
-                  sm:p-8
-                  border
-                  border-neutral-200/60
-                  dark:border-white/10
-                  relative
-                  overflow-hidden
-                  transition-all
-                  duration-300
-                  h-full
-                  flex
-                  flex-col
-                  justify-center
-                  items-center
-                "
+                className="glass rounded-2xl border border-neutral-200/80 dark:border-white/10 relative overflow-hidden transition-all duration-300 h-full flex flex-col justify-start items-center shadow-sm hover:shadow-xl hover:shadow-accent/15 hover:border-accent/40"
+                style={{ padding: '32px 28px' }}
               >
                 {/* Glow */}
                 <div
@@ -120,30 +104,11 @@ const AchievementsAndCertifications = () => {
 
                 <motion.div
                   variants={hoverCard}
-                  className="relative z-10 flex flex-col items-center justify-center text-center gap-4 h-full w-full"
+                  className="relative z-10 flex flex-col items-center justify-start text-center gap-3.5 w-full flex-1"
                 >
                   {/* Icon */}
-                  <div
-                    className="
-                      w-12
-                      h-12
-                      rounded-xl
-                      flex
-                      items-center
-                      justify-center
-                      border
-                      border-neutral-200
-                      dark:border-white/10
-                      bg-neutral-50
-                      dark:bg-[#111111]
-                      shadow-sm
-                      dark:shadow-none
-                      transition-all
-                      duration-300
-                      mx-auto
-                    "
-                  >
-                    <IconComponent className="w-5 h-5 text-accent" />
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center border border-neutral-200/80 dark:border-white/10 bg-white/80 dark:bg-[#111111]/90 shadow-sm transition-all duration-300 shrink-0 mb-1">
+                    <IconComponent className="w-6 h-6 text-accent" />
                   </div>
 
                   {/* Title */}
@@ -152,12 +117,12 @@ const AchievementsAndCertifications = () => {
                   </h3>
 
                   {/* Issuer */}
-                  <p className="text-xs sm:text-sm font-semibold text-accent uppercase tracking-wider">
+                  <p className="text-xs sm:text-sm font-bold text-accent uppercase tracking-wider">
                     {item.issuer}
                   </p>
 
                   {/* Description */}
-                  <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed font-normal">
+                  <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed font-normal mt-1">
                     {item.description}
                   </p>
 

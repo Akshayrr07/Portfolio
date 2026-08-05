@@ -5,7 +5,7 @@ import { Building2, MapPin, Calendar, CheckCircle2 } from 'lucide-react';
 
 const Experience = () => {
   return (
-    <section className="w-full min-h-screen flex flex-col justify-center items-center px-4 sm:px-8 lg:px-12 py-20 sm:py-28 relative overflow-hidden">
+    <section className="w-full min-h-screen flex flex-col justify-start items-center px-4 sm:px-8 lg:px-12 pt-36 sm:pt-44 lg:pt-48 pb-24 sm:pb-32 relative overflow-hidden">
       {/* Background Lighting Spotlights */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] h-[650px] bg-accent/10 dark:bg-accent/15 rounded-full blur-[170px] pointer-events-none -z-10" />
 
@@ -13,7 +13,7 @@ const Experience = () => {
       <div className="absolute inset-0 bg-[radial-gradient(#d1d5db_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none -z-10 opacity-50" />
 
       {/* Main Container */}
-      <div className="max-w-[1100px] w-full mx-auto flex flex-col justify-center items-center my-auto px-4 sm:px-8">
+      <div className="max-w-[1100px] w-full mx-auto flex flex-col justify-start items-center px-4 sm:px-8">
         
         {/* Section Header */}
         <motion.div

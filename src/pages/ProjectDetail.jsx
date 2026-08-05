@@ -42,8 +42,24 @@ const ProjectDetail = () => {
       </motion.div>
 
       <motion.div variants={fadeInUp} className="mb-12">
-        <div className="h-[400px] bg-gradient-to-br from-accent/10 to-purple-500/10 dark:from-accent/20 dark:to-purple-500/20 rounded-2xl flex items-center justify-center mb-8">
-          <span className="text-2xl font-bold tracking-wider text-neutral-800 dark:text-neutral-200">PROJECT IMAGE</span>
+        <div className="relative h-[320px] sm:h-[400px] w-full overflow-hidden bg-gradient-to-br from-neutral-100 via-neutral-50 to-neutral-200 dark:from-neutral-900/90 dark:via-neutral-800/80 dark:to-neutral-900 rounded-3xl flex items-center justify-center mb-8 border border-neutral-200/60 dark:border-white/10 shadow-lg">
+          {project.image ? (
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="relative w-full h-full flex flex-col items-center justify-center p-8 text-center">
+              <div className="absolute inset-0 bg-gradient-to-tr from-accent/15 via-transparent to-purple-500/15 pointer-events-none" />
+              <span className="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-accent/10 text-accent mb-3 border border-accent/20">
+                {project.category || 'Project Preview'}
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 dark:text-white max-w-xl leading-tight">
+                {project.title}
+              </h2>
+            </div>
+          )}
         </div>
         
         <h1 className="text-5xl font-display font-bold mb-4 text-neutral-900 dark:text-white">{project.title}</h1>

@@ -32,12 +32,15 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-3 sm:top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1.5rem)] sm:w-[calc(100%-3rem)] max-w-[1480px] min-h-[58px] sm:min-h-[66px] rounded-2xl border border-neutral-200/80 dark:border-white/10 bg-white/90 dark:bg-[#111111]/90 backdrop-blur-xl shadow-lg transition-all duration-300 flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-1.5 sm:py-2">
+    <nav 
+      className="fixed top-3 sm:top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1.5rem)] sm:w-[calc(100%-3rem)] max-w-[1480px] rounded-2xl border border-neutral-200/80 dark:border-white/10 bg-white/90 dark:bg-[#111111]/90 backdrop-blur-xl shadow-lg transition-all duration-300 flex flex-col justify-center"
+      style={{ paddingLeft: '32px', paddingRight: '32px', paddingTop: '16px', paddingBottom: '16px' }}
+    >
       <div className="w-full flex items-center justify-between">
         {/* 1. Branding (Left Section) */}
         <Link
           to="/"
-          className="flex items-center gap-2.5 sm:gap-3 group outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg shrink-0"
+          className="flex items-center gap-3 group outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg shrink-0"
         >
           <SmallNavbarLogo />
           <div className="flex flex-col justify-center">
@@ -52,7 +55,7 @@ const Navbar = () => {
 
         {/* 2. Navigation (Centered Section for Desktop) */}
         <div className="hidden lg:flex flex-1 justify-center items-center px-4">
-          <div className="flex items-center gap-5 lg:gap-6">
+          <div className="flex items-center gap-5 lg:gap-7">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path;
               return (
@@ -80,12 +83,12 @@ const Navbar = () => {
         </div>
 
         {/* 3. Theme Toggle (Right Section for Desktop) */}
-        <div className="hidden lg:flex items-center justify-end shrink-0 ml-3 mr-1">
+        <div className="hidden lg:flex items-center justify-end shrink-0">
           <ThemeToggle />
         </div>
 
         {/* Mobile Navigation Button & Theme Toggle */}
-        <div className="flex lg:hidden items-center gap-2 shrink-0">
+        <div className="flex lg:hidden items-center gap-3 shrink-0">
           <ThemeToggle />
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -119,11 +122,10 @@ const Navbar = () => {
                     key={link.path}
                     to={link.path}
                     onClick={() => setIsOpen(false)}
-                    className={`px-3.5 py-2 text-[14px] font-medium rounded-lg transition-colors duration-200 ${
-                      isActive
+                    className={`px-3.5 py-2 text-[14px] font-medium rounded-lg transition-colors duration-200 ${isActive
                         ? 'text-accent bg-accent/10 dark:bg-accent/15 font-semibold'
                         : 'text-neutral-600 dark:text-neutral-400 hover:text-accent hover:bg-neutral-100 dark:hover:bg-white/5'
-                    }`}
+                      }`}
                   >
                     {link.label}
                   </Link>
