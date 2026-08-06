@@ -8,6 +8,11 @@ import { Zap } from 'lucide-react';
 const Contact = () => {
   return (
     <section className="w-full min-h-[calc(100vh-80px)] flex flex-col justify-center items-center px-4 sm:px-8 lg:px-12 pt-28 sm:pt-36 pb-16 sm:pb-20 relative overflow-hidden">
+      {/* Background Green Glow & Lighting Spotlights */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-accent/15 dark:bg-accent/20 rounded-full blur-[160px] pointer-events-none -z-10" />
+      <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-accent/10 dark:bg-accent/15 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute top-20 left-10 w-[350px] h-[350px] bg-emerald-500/10 dark:bg-accent/10 rounded-full blur-[130px] pointer-events-none -z-10" />
+
       {/* Grid Pattern Overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(#d1d5db_1px,transparent_1px)] dark:bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none -z-10 opacity-50" />
 
@@ -18,14 +23,17 @@ const Contact = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="max-w-[1020px] w-full mx-auto text-center bg-white/90 dark:bg-[#121212]/95 backdrop-blur-xl border border-neutral-200/80 dark:border-white/10 rounded-[32px] px-6 sm:px-14 lg:px-18 py-16 sm:py-24 lg:py-28 shadow-xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 flex flex-col items-center gap-10 sm:gap-14 relative overflow-hidden"
+          className="max-w-[1020px] w-full mx-auto text-center bg-white/90 dark:bg-[#121212]/95 backdrop-blur-xl border border-neutral-200/80 dark:border-white/10 rounded-[32px] px-6 sm:px-14 lg:px-18 py-16 sm:py-24 lg:py-28 shadow-xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:border-accent/40 hover:shadow-[0_0_50px_rgba(37,211,102,0.18)] transition-all duration-300 flex flex-col items-center gap-10 sm:gap-14 relative overflow-hidden"
           style={{ paddingTop: '80px', paddingBottom: '80px' }}
         >
+          {/* Card Internal Ambient Green Radial Glow */}
+          <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-accent/15 dark:bg-accent/25 rounded-full blur-[80px] pointer-events-none" />
+
           {/* 1. Header Group: Title + Subtitle (with Top Margin) */}
-          <div className="flex flex-col items-center gap-5 sm:gap-6 w-full max-w-3xl px-2 sm:px-6 pt-4 sm:pt-6">
+          <div className="flex flex-col items-center gap-5 sm:gap-6 w-full max-w-3xl px-2 sm:px-6 pt-4 sm:pt-6 relative z-10">
             {/* Title */}
             <h2 className="font-sans font-extrabold text-3xl sm:text-4xl lg:text-[46px] tracking-tight text-neutral-900 dark:text-white leading-[1.15]">
-              Let's Build Something Amazing
+              Let's Build Something <span className="text-accent">Amazing</span>
             </h2>
             
             {/* Subtitle Description */}
@@ -35,7 +43,7 @@ const Contact = () => {
           </div>
           
           {/* 2. CTA Action Group */}
-          <div className="flex flex-col items-center gap-4 w-full pt-2">
+          <div className="flex flex-col items-center gap-4 w-full pt-2 relative z-10">
             <div className="flex flex-wrap justify-center items-center gap-5 sm:gap-6 w-full">
               <Button variant="primary" href={socialData.email}>
                 Email Me
@@ -53,7 +61,7 @@ const Contact = () => {
           </div>
           
           {/* 3. Social Links Row (with Increased Internal Padding) */}
-          <div className="w-full pt-10 sm:pt-12 pb-6 sm:pb-8 border-t border-neutral-200/50 dark:border-neutral-800/60 flex flex-col items-center gap-6 sm:gap-7">
+          <div className="w-full pt-10 sm:pt-12 pb-6 sm:pb-8 border-t border-neutral-200/50 dark:border-neutral-800/60 flex flex-col items-center gap-6 sm:gap-7 relative z-10">
             <p className="text-xs font-bold tracking-widest text-neutral-400 dark:text-neutral-500 uppercase">
               Or connect via social platforms
             </p>
