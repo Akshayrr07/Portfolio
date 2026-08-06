@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { hoverCard } from '../../animations/variants.jsx';
-import { Code as GithubIcon, ArrowRight, ArrowUpRight, Cpu, Layers, Server, FolderGit2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Code as GithubIcon, ArrowUpRight, Cpu, Layers, Server, FolderGit2 } from 'lucide-react';
 
 const getCategoryIcon = (category) => {
   switch (category?.toLowerCase()) {
@@ -33,6 +32,7 @@ const getStatusBadgeStyle = (status) => {
 
 const ProjectCard = ({ project }) => {
   const extraTechCount = project.techStack ? (project.techStack.length > 3 ? project.techStack.length - 3 : 0) : 0;
+  const hasGithub = Boolean(project.github && project.github !== '#');
 
   return (
     <motion.div
@@ -127,34 +127,26 @@ const ProjectCard = ({ project }) => {
         </div>
       </div>
 
-      {/* 5. Action Buttons - Explicit 28px top margin from tech stack */}
-      <div 
-        className="flex items-center justify-between gap-3.5 w-full mt-auto"
-        style={{ marginTop: '28px' }}
-      >
-        {/* Primary CTA */}
-        <Link
-          to={`/projects/${project.id}`}
-          className="flex-1 min-w-[115px] sm:min-w-[130px] h-11 rounded-xl bg-accent text-neutral-950 font-bold text-xs sm:text-sm inline-flex items-center justify-center gap-2 border border-accent shadow-md shadow-accent/20 hover:shadow-lg hover:shadow-accent/35 hover:-translate-y-[2px] transition-all duration-300 group/btn whitespace-nowrap"
-          style={{ paddingLeft: '20px', paddingRight: '20px' }}
+      {/* 5. Action Buttons */}
+      {hasGithub && (
+        <div 
+          className="flex items-center justify-between gap-3.5 w-full mt-auto"
+          style={{ marginTop: '28px' }}
         >
-          <span>{project.liveDemo && project.liveDemo !== '#' ? 'Live Demo' : 'View Details'}</span>
-          <ArrowRight className="w-4 h-4 shrink-0 group-hover/btn:translate-x-[3px] transition-transform duration-300" />
-        </Link>
-
-        {/* Secondary GitHub button */}
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex-1 min-w-[100px] sm:min-w-[115px] h-11 rounded-xl bg-white/80 dark:bg-white/5 text-neutral-800 dark:text-neutral-200 font-semibold text-xs sm:text-sm border border-neutral-300/80 dark:border-white/15 hover:border-accent/60 dark:hover:border-accent/60 hover:bg-neutral-100 dark:hover:bg-white/15 hover:text-neutral-900 dark:hover:text-white backdrop-blur-md shadow-sm hover:shadow-md hover:shadow-accent/10 hover:-translate-y-[2px] inline-flex items-center justify-center gap-2 transition-all duration-300 group/git whitespace-nowrap"
-          style={{ paddingLeft: '20px', paddingRight: '20px' }}
-        >
-          <GithubIcon className="w-4 h-4 text-neutral-700 dark:text-neutral-300 group-hover/git:rotate-12 transition-transform duration-300 shrink-0" />
-          <span>GitHub</span>
-          <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 dark:text-neutral-400 group-hover/git:translate-x-[2px] group-hover/git:-translate-y-[2px] transition-transform duration-300 shrink-0" />
-        </a>
-      </div>
+          {/* Secondary GitHub button */}
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full h-11 rounded-xl bg-white/80 dark:bg-white/5 text-neutral-800 dark:text-neutral-200 font-semibold text-xs sm:text-sm border border-neutral-300/80 dark:border-white/15 hover:border-accent/60 dark:hover:border-accent/60 hover:bg-neutral-100 dark:hover:bg-white/15 hover:text-neutral-900 dark:hover:text-white backdrop-blur-md shadow-sm hover:shadow-md hover:shadow-accent/10 hover:-translate-y-[2px] inline-flex items-center justify-center gap-2 transition-all duration-300 group/git whitespace-nowrap"
+            style={{ paddingLeft: '20px', paddingRight: '20px' }}
+          >
+            <GithubIcon className="w-4 h-4 text-neutral-700 dark:text-neutral-300 group-hover/git:rotate-12 transition-transform duration-300 shrink-0" />
+            <span>GitHub</span>
+            <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 dark:text-neutral-400 group-hover/git:translate-x-[2px] group-hover/git:-translate-y-[2px] transition-transform duration-300 shrink-0" />
+          </a>
+        </div>
+      )}
     </motion.div>
   );
 };
