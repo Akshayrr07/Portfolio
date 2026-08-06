@@ -30,6 +30,34 @@ const getStatusBadgeStyle = (status) => {
   }
 };
 
+const getCategoryIcon = (category) => {
+  switch (category?.toLowerCase()) {
+    case 'ai/ml':
+      return <Cpu className="w-4 h-4 text-accent" />;
+    case 'full stack':
+      return <Layers className="w-4 h-4 text-accent" />;
+    case 'deployment':
+      return <Server className="w-4 h-4 text-accent" />;
+    default:
+      return <FolderGit2 className="w-4 h-4 text-accent" />;
+  }
+};
+
+const getStatusBadgeStyle = (status) => {
+  switch (status?.toLowerCase()) {
+    case 'live':
+      return 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30';
+    case 'featured':
+      return 'bg-accent/15 text-accent border-accent/30';
+    case 'completed':
+      return 'bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/30';
+    case 'in progress':
+      return 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30';
+    default:
+      return 'bg-neutral-500/10 text-neutral-600 dark:text-neutral-300 border-neutral-500/30';
+  }
+};
+
 const ProjectCard = ({ project }) => {
   const extraTechCount = project.techStack ? (project.techStack.length > 3 ? project.techStack.length - 3 : 0) : 0;
   const hasGithub = Boolean(project.github && project.github !== '#');
