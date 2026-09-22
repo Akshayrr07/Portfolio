@@ -22,14 +22,20 @@ const Navbar = () => {
   const location = useLocation();
 
   const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
-    { path: '/skills', label: 'Skills' },
-    { path: '/projects', label: 'Projects' },
-    { path: '/certifications', label: 'Certifications' },
-    { path: '/experience', label: 'Experience' },
-    { path: '/contact', label: 'Contact' },
+    { path: '/#home', label: 'Home' },
+    { path: '/#about', label: 'About' },
+    { path: '/#skills', label: 'Skills' },
+    { path: '/#projects', label: 'Projects' },
+    { path: '/#certifications', label: 'Certifications' },
+    { path: '/#experience', label: 'Experience' },
+    { path: '/#contact', label: 'Contact' },
   ];
+
+  const getIsActive = (path) => {
+    if (location.pathname !== '/') return false;
+    const hash = location.hash || '#home';
+    return hash === path.replace('/', '');
+  };
 
   return (
     <nav 
@@ -57,11 +63,11 @@ const Navbar = () => {
         <div className="hidden lg:flex flex-1 justify-center items-center px-4">
           <div className="flex items-center gap-5 lg:gap-7">
             {navLinks.map((link) => {
-              const isActive = location.pathname === link.path;
+              const isActive = getIsActive(link.path);
               return (
-                <Link
+                <a
                   key={link.path}
-                  to={link.path}
+                  href={link.path}
                   className={`relative py-1 text-[14px] font-medium transition-colors duration-200 outline-none focus-visible:ring-2 focus-visible:ring-accent ${
                     isActive
                       ? 'text-accent font-semibold'
@@ -76,7 +82,7 @@ const Navbar = () => {
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
-                </Link>
+                </a>
               );
             })}
           </div>
@@ -116,11 +122,11 @@ const Navbar = () => {
           >
             <div className="py-1.5 flex flex-col gap-1">
               {navLinks.map((link) => {
-                const isActive = location.pathname === link.path;
+                const isActive = getIsActive(link.path);
                 return (
-                  <Link
+                  <a
                     key={link.path}
-                    to={link.path}
+                    href={link.path}
                     onClick={() => setIsOpen(false)}
                     className={`px-3.5 py-2 text-[14px] font-medium rounded-lg transition-colors duration-200 ${isActive
                         ? 'text-accent bg-accent/10 dark:bg-accent/15 font-semibold'
@@ -128,7 +134,7 @@ const Navbar = () => {
                       }`}
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 );
               })}
             </div>
