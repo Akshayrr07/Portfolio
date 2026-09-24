@@ -38,7 +38,7 @@ const RREmblemLogo = () => (
 
 const Hero = () => {
   const socialSquareClasses =
-    'w-10 h-10 rounded-xl bg-white/80 dark:bg-[#141414] border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-accent dark:hover:text-white hover:border-accent/60 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-200 transform hover:scale-105 flex items-center justify-center outline-none focus-visible:ring-2 focus-visible:ring-accent shadow-sm dark:shadow-md hover:shadow-[0_0_14px_rgba(37,211,102,0.35)] p-2.5';
+    'w-10 h-10 rounded-xl bg-white/80 dark:bg-[#141414] border border-neutral-200 dark:border-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-accent-text dark:hover:text-white hover:border-accent/60 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-200 transform hover:scale-105 flex items-center justify-center outline-none focus-visible:ring-2 focus-visible:ring-accent shadow-sm dark:shadow-md hover:shadow-[0_0_14px_rgba(37,211,102,0.35)] p-2.5';
 
   const stats = [
     {
@@ -85,7 +85,7 @@ const Hero = () => {
           >
             {/* 1. Minimal Focal Badge */}
             <div 
-              className="inline-flex items-center gap-2.5 rounded-full bg-accent/10 dark:bg-accent/15 border border-accent/25 text-accent text-[12px] sm:text-[13px] font-semibold tracking-wide"
+              className="inline-flex items-center gap-2.5 rounded-full bg-accent/10 dark:bg-accent/15 border border-accent/25 text-accent-text text-[12px] sm:text-[13px] font-semibold tracking-wide"
               style={{ paddingLeft: '20px', paddingRight: '20px', paddingTop: '10px', paddingBottom: '10px' }}
             >
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
@@ -94,11 +94,11 @@ const Hero = () => {
 
             {/* 2. Name Heading */}
             <h1 className="font-sans font-extrabold text-4xl sm:text-6xl lg:text-[70px] xl:text-[76px] tracking-tight text-neutral-900 dark:text-white leading-[1.05]">
-              AKSHAY <span className="text-accent">RR</span>
+              AKSHAY <span className="text-accent-text">RR</span>
             </h1>
 
             {/* 3. Subtitle */}
-            <p className="text-[13px] sm:text-[14px] font-bold tracking-[3.5px] text-accent uppercase">
+            <p className="text-[13px] sm:text-[14px] font-bold tracking-[3.5px] text-accent-text uppercase">
               Full-Stack Engineer
             </p>
 

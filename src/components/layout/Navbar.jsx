@@ -50,10 +50,10 @@ const Navbar = () => {
         >
           <SmallNavbarLogo />
           <div className="flex flex-col justify-center">
-            <span className="text-[17px] sm:text-[19px] font-extrabold font-sans tracking-tight text-neutral-900 dark:text-white group-hover:text-accent transition-colors duration-200 leading-none">
+            <span className="text-[17px] sm:text-[19px] font-extrabold font-sans tracking-tight text-neutral-900 dark:text-white group-hover:text-accent-text transition-colors duration-200 leading-none">
               AKSHAY RR
             </span>
-            <span className="hidden sm:block text-[9.5px] sm:text-[10px] font-bold tracking-[1.8px] text-accent uppercase leading-none mt-0.5">
+            <span className="hidden sm:block text-[9.5px] sm:text-[10px] font-bold tracking-[1.8px] text-accent-text uppercase leading-none mt-0.5">
               FULL-STACK ENGINEER
             </span>
           </div>
@@ -70,8 +70,8 @@ const Navbar = () => {
                   href={link.path}
                   className={`relative py-1 text-[14px] font-medium transition-colors duration-200 outline-none focus-visible:ring-2 focus-visible:ring-accent ${
                     isActive
-                      ? 'text-accent font-semibold'
-                      : 'text-neutral-600 dark:text-neutral-300 hover:text-accent'
+                      ? 'text-accent-text font-semibold'
+                      : 'text-neutral-600 dark:text-neutral-300 hover:text-accent-text'
                   }`}
                 >
                   {link.label}
@@ -129,8 +129,8 @@ const Navbar = () => {
                     href={link.path}
                     onClick={() => setIsOpen(false)}
                     className={`px-3.5 py-2 text-[14px] font-medium rounded-lg transition-colors duration-200 ${isActive
-                        ? 'text-accent bg-accent/10 dark:bg-accent/15 font-semibold'
-                        : 'text-neutral-600 dark:text-neutral-400 hover:text-accent hover:bg-neutral-100 dark:hover:bg-white/5'
+                        ? 'text-accent-text bg-accent/10 dark:bg-accent/15 font-semibold'
+                        : 'text-neutral-600 dark:text-neutral-400 hover:text-accent-text hover:bg-neutral-100 dark:hover:bg-white/5'
                       }`}
                   >
                     {link.label}

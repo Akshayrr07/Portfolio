@@ -33,7 +33,7 @@ const Contact = () => {
           <div className="flex flex-col items-center gap-5 sm:gap-6 w-full max-w-3xl px-2 sm:px-6 pt-4 sm:pt-6 relative z-10">
             {/* Title */}
             <h2 className="font-sans font-extrabold text-3xl sm:text-4xl lg:text-[46px] tracking-tight text-neutral-900 dark:text-white leading-[1.15]">
-              Let's Build Something <span className="text-accent">Amazing</span>
+              Let's Build Something <span className="text-accent-text">Amazing</span>
             </h2>
             
             {/* Subtitle Description */}

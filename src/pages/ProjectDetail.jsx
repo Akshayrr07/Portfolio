@@ -35,7 +35,7 @@ const ProjectDetail = () => {
       className="container mx-auto px-4 pt-28 sm:pt-36 pb-24"
     >
       <motion.div variants={fadeInUp} className="mb-8">
-        <Link to="/projects" className="inline-flex items-center gap-2 text-neutral-500 dark:text-neutral-400 hover:text-accent transition-colors outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg px-2">
+        <Link to="/projects" className="inline-flex items-center gap-2 text-neutral-500 dark:text-neutral-400 hover:text-accent-text transition-colors outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg px-2">
           <ArrowLeftIcon className="w-4 h-4" />
           Back to Projects
         </Link>
@@ -52,7 +52,7 @@ const ProjectDetail = () => {
           ) : (
             <div className="relative w-full h-full flex flex-col items-center justify-center p-8 text-center">
               <div className="absolute inset-0 bg-gradient-to-tr from-accent/15 via-transparent to-purple-500/15 pointer-events-none" />
-              <span className="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-accent/10 text-accent mb-3 border border-accent/20">
+              <span className="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest bg-accent/10 text-accent-text mb-3 border border-accent/20">
                 {project.category || 'Project Preview'}
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 dark:text-white max-w-xl leading-tight">
@@ -71,7 +71,7 @@ const ProjectDetail = () => {
         <h2 className="text-3xl font-bold mb-6 text-neutral-900 dark:text-white">Tech Stack</h2>
         <div className="flex flex-wrap gap-3">
           {project.techStack.map((tech, index) => (
-            <span key={index} className="px-4 py-2 bg-accent/10 dark:bg-accent/20 text-accent rounded-full text-sm font-semibold">
+            <span key={index} className="px-4 py-2 bg-accent/10 dark:bg-accent/20 text-accent-text rounded-full text-sm font-semibold">
               {tech}
             </span>
           ))}
@@ -83,9 +83,9 @@ const ProjectDetail = () => {
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-xl font-semibold hover:bg-accent/90 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          className="flex items-center gap-2 px-6 py-3 bg-accent text-neutral-950 rounded-xl font-semibold hover:bg-accent/90 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-accent"
         >
-          <GithubIcon className="w-5 h-5 text-white" />
+          <GithubIcon className="w-5 h-5 text-neutral-950" />
           View on GitHub
         </a>
         {project.liveDemo !== '#' && (

@@ -77,7 +77,7 @@ const About = () => {
                       <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0 shadow-sm group-hover:bg-accent group-hover:text-black transition-colors duration-200">
                         <IconComp className="w-5 h-5" />
                       </div>
-                      <span className="text-base sm:text-lg font-bold text-neutral-900 dark:text-white tracking-tight group-hover:text-accent transition-colors duration-200">
+                      <span className="text-base sm:text-lg font-bold text-neutral-900 dark:text-white tracking-tight group-hover:text-accent-text transition-colors duration-200">
                         {item.label}
                       </span>
                     </motion.div>

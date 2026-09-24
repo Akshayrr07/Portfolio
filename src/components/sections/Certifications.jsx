@@ -117,7 +117,7 @@ const AchievementsAndCertifications = () => {
                   </h3>
 
                   {/* Issuer */}
-                  <p className="text-xs sm:text-sm font-bold text-accent uppercase tracking-wider">
+                  <p className="text-xs sm:text-sm font-bold text-accent-text uppercase tracking-wider">
                     {item.issuer}
                   </p>
 
