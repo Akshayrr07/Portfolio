@@ -33,7 +33,7 @@ const getStatusBadgeStyle = (status) => {
 
 const ProjectCard = ({ project }) => {
   const extraTechCount = project.techStack ? (project.techStack.length > 3 ? project.techStack.length - 3 : 0) : 0;
-  const hasGithub = Boolean(project.github && project.github !== '#');
+  const hasGithub = Boolean(project.github);
 
   return (
     <motion.div

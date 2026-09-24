@@ -29,7 +29,10 @@ const Button = ({ children, variant = 'primary', onClick, href, to, className = 
   }
 
   const Component = href ? 'a' : 'button';
-  const props = href ? { href, target: '_blank', rel: 'noopener noreferrer' } : { onClick };
+  const isMailto = href?.startsWith('mailto:');
+  const props = href
+    ? { href, target: isMailto ? undefined : '_blank', rel: isMailto ? undefined : 'noopener noreferrer' }
+    : { onClick };
 
   return (
     <Component
