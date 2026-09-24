@@ -20,7 +20,7 @@ const getStatusBadgeStyle = (status) => {
     case 'live':
       return 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30';
     case 'featured':
-      return 'bg-accent/15 text-accent border-accent/30';
+      return 'bg-accent/15 text-accent-text border-accent/30';
     case 'completed':
       return 'bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/30';
     case 'in progress':
@@ -89,7 +89,7 @@ const ProjectCard = ({ project }) => {
 
         {/* 2. Title */}
         <h3 
-          className="text-lg sm:text-xl font-bold tracking-tight text-neutral-900 dark:text-white group-hover:text-accent transition-colors line-clamp-1"
+          className="text-lg sm:text-xl font-bold tracking-tight text-neutral-900 dark:text-white group-hover:text-accent-text transition-colors line-clamp-1"
           style={{ marginTop: '20px', marginBottom: '12px' }}
         >
           {project.title}
@@ -111,7 +111,7 @@ const ProjectCard = ({ project }) => {
           {project.techStack?.slice(0, 3).map((tech, index) => (
             <span
               key={index}
-              className="bg-neutral-100 dark:bg-neutral-800/90 text-neutral-700 dark:text-neutral-300 font-semibold rounded-xl text-xs border border-neutral-200/80 dark:border-white/10 hover:bg-accent/10 hover:text-accent hover:border-accent/40 transition-all duration-200"
+              className="bg-neutral-100 dark:bg-neutral-800/90 text-neutral-700 dark:text-neutral-300 font-semibold rounded-xl text-xs border border-neutral-200/80 dark:border-white/10 hover:bg-accent/10 hover:text-accent-text hover:border-accent/40 transition-all duration-200"
               style={{ paddingLeft: '14px', paddingRight: '14px', paddingTop: '6px', paddingBottom: '6px' }}
             >
               {tech}
@@ -119,7 +119,7 @@ const ProjectCard = ({ project }) => {
           ))}
           {extraTechCount > 0 && (
             <span 
-              className="bg-accent/10 dark:bg-accent/20 text-accent font-semibold rounded-xl text-xs border border-accent/30"
+              className="bg-accent/10 dark:bg-accent/20 text-accent-text font-semibold rounded-xl text-xs border border-accent/30"
               style={{ paddingLeft: '14px', paddingRight: '14px', paddingTop: '6px', paddingBottom: '6px' }}
             >
               +{extraTechCount} more

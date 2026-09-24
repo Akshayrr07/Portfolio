@@ -69,14 +69,14 @@ const Experience = () => {
                       <h3 className="text-xl sm:text-2xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
                         {exp.title}
                       </h3>
-                      <span className="text-accent font-bold text-xs sm:text-sm uppercase tracking-wider shrink-0">
+                      <span className="text-accent-text font-bold text-xs sm:text-sm uppercase tracking-wider shrink-0">
                         {exp.type}
                       </span>
                     </div>
 
                     {/* Second Row: Company, Location, Date Range */}
                     <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm">
-                      <div className="flex items-center gap-1.5 text-accent font-semibold">
+                      <div className="flex items-center gap-1.5 text-accent-text font-semibold">
                         <Building2 className="w-4.5 h-4.5 text-accent shrink-0" />
                         <span>{exp.company}</span>
                       </div>
@@ -112,7 +112,7 @@ const Experience = () => {
                     {exp.technologies.map((tech, index) => (
                       <span
                         key={index}
-                        className="text-neutral-700 dark:text-neutral-300 font-semibold hover:text-accent transition-colors"
+                        className="text-neutral-700 dark:text-neutral-300 font-semibold hover:text-accent-text transition-colors"
                       >
                         {tech}{index < exp.technologies.length - 1 ? ' •' : ''}
                       </span>

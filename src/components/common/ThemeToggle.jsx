@@ -8,8 +8,10 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
+      type="button"
       className="relative w-10 h-10 rounded-full border border-neutral-300 dark:border-neutral-700/80 bg-white/80 dark:bg-[#141414] hover:border-accent/60 dark:hover:border-accent/60 transition-all duration-250 transform hover:scale-105 cursor-pointer overflow-hidden flex items-center justify-center focus-visible:ring-2 focus-visible:ring-accent outline-none shadow-sm p-2.5"
-      aria-label="Toggle theme"
+      aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
+      aria-pressed={isDark}
     >
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
@@ -21,9 +23,9 @@ const ThemeToggle = () => {
           className="flex items-center justify-center"
         >
           {isDark ? (
-            <SunIcon className="w-5 h-5 text-accent drop-shadow-[0_0_8px_rgba(37,211,102,0.6)]" />
+            <SunIcon aria-hidden="true" className="w-5 h-5 text-accent drop-shadow-[0_0_8px_rgba(37,211,102,0.6)]" />
           ) : (
-            <MoonIcon className="w-5 h-5 text-neutral-800 dark:text-neutral-200" />
+            <MoonIcon aria-hidden="true" className="w-5 h-5 text-neutral-800 dark:text-neutral-200" />
           )}
         </motion.div>
       </AnimatePresence>

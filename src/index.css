@@ -4,8 +4,19 @@
 
 @theme {
   --color-accent: #25D366;
+  --color-accent-text: #0B6E36;
   --color-dark-bg: #0b0b0b;
   --color-dark-card: #1a1a1a;
+}
+
+/* Keep the brand green for decorative surfaces while using a readable
+   semantic accent for text in each theme. */
+:root {
+  --color-accent-text: #0B6E36;
+}
+
+.dark {
+  --color-accent-text: #25D366;
 }
 
 * {
