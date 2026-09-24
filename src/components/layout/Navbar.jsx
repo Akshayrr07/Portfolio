@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu as MenuIcon, X as XIcon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -19,7 +19,23 @@ const SmallNavbarLogo = () => (
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const menuButtonRef = useRef(null);
   const location = useLocation();
+
+  useEffect(() => {
+    if (!isOpen) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        setIsOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen]);
 
   const navLinks = [
     { path: '/#home', label: 'Home' },
@@ -97,9 +113,13 @@ const Navbar = () => {
         <div className="flex lg:hidden items-center gap-3 shrink-0">
           <ThemeToggle />
           <button
+            ref={menuButtonRef}
+            type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 rounded-lg bg-neutral-100 dark:bg-white/5 border border-neutral-200/50 dark:border-white/10 cursor-pointer text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
-            aria-label="Toggle menu"
+            className="min-h-11 min-w-11 p-2 flex items-center justify-center rounded-lg bg-neutral-100 dark:bg-white/5 border border-neutral-200/50 dark:border-white/10 cursor-pointer text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation-menu"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
           >
             {isOpen ? (
               <XIcon className="w-4.5 h-4.5 text-neutral-800 dark:text-white" />
@@ -114,6 +134,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-navigation-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -128,7 +149,7 @@ const Navbar = () => {
                     key={link.path}
                     href={link.path}
                     onClick={() => setIsOpen(false)}
-                    className={`px-3.5 py-2 text-[14px] font-medium rounded-lg transition-colors duration-200 ${isActive
+                    className={`min-h-11 min-w-11 px-3.5 py-2 flex items-center text-[14px] font-medium rounded-lg transition-colors duration-200 ${isActive
                         ? 'text-accent bg-accent/10 dark:bg-accent/15 font-semibold'
                         : 'text-neutral-600 dark:text-neutral-400 hover:text-accent hover:bg-neutral-100 dark:hover:bg-white/5'
                       }`}
