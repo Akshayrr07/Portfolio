@@ -44,33 +44,43 @@ const Contact = () => {
           
           {/* 2. CTA Action Group */}
           <div className="flex flex-col items-center gap-4 w-full pt-2 relative z-10">
-            <div className="flex flex-wrap justify-center items-center gap-5 sm:gap-6 w-full">
-              <Button variant="primary" href={socialData.email}>
-                Email Me
-              </Button>
-              <Button variant="outline" href={socialData.linkedin}>
-                LinkedIn
-              </Button>
-            </div>
+            {(socialData.email || socialData.linkedin) && (
+              <div className="flex flex-wrap justify-center items-center gap-5 sm:gap-6 w-full">
+                {socialData.email && (
+                  <Button variant="primary" href={socialData.email}>
+                    Email Me
+                  </Button>
+                )}
+                {socialData.linkedin && (
+                  <Button variant="outline" href={socialData.linkedin}>
+                    LinkedIn
+                  </Button>
+                )}
+              </div>
+            )}
 
             {/* Trust Indicator */}
-            <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-neutral-500 dark:text-neutral-400 pt-2">
-              <Zap className="w-4 h-4 text-accent fill-accent/20 animate-pulse" />
-              <span>Usually replies within 24 hours</span>
-            </div>
+            {socialData.email && (
+              <div className="flex items-center gap-2 text-xs sm:text-sm font-medium text-neutral-500 dark:text-neutral-400 pt-2">
+                <Zap className="w-4 h-4 text-accent fill-accent/20 animate-pulse" />
+                <span>Usually replies within 24 hours</span>
+              </div>
+            )}
           </div>
           
           {/* 3. Social Links Row (with Increased Internal Padding) */}
-          <div className="w-full pt-10 sm:pt-12 pb-6 sm:pb-8 border-t border-neutral-200/50 dark:border-neutral-800/60 flex flex-col items-center gap-6 sm:gap-7 relative z-10">
-            <p className="text-xs font-bold tracking-widest text-neutral-400 dark:text-neutral-500 uppercase">
-              Or connect via social platforms
-            </p>
-            <div className="flex flex-wrap justify-center items-center gap-5 sm:gap-7">
-              <SocialLink platform="github" href={socialData.github} label="GitHub" />
-              <SocialLink platform="linkedin" href={socialData.linkedin} label="LinkedIn" />
-              <SocialLink platform="email" href={socialData.email} label="Email" />
+          {(socialData.github || socialData.linkedin || socialData.email) && (
+            <div className="w-full pt-10 sm:pt-12 pb-6 sm:pb-8 border-t border-neutral-200/50 dark:border-neutral-800/60 flex flex-col items-center gap-6 sm:gap-7 relative z-10">
+              <p className="text-xs font-bold tracking-widest text-neutral-400 dark:text-neutral-500 uppercase">
+                Or connect via social platforms
+              </p>
+              <div className="flex flex-wrap justify-center items-center gap-5 sm:gap-7">
+                {socialData.github && <SocialLink platform="github" href={socialData.github} label="GitHub" />}
+                {socialData.linkedin && <SocialLink platform="linkedin" href={socialData.linkedin} label="LinkedIn" />}
+                {socialData.email && <SocialLink platform="email" href={socialData.email} label="Email" />}
+              </div>
             </div>
-          </div>
+          )}
         </motion.div>
       </div>
     </section>

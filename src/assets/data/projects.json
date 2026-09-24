@@ -6,8 +6,8 @@
     "category": "AI/ML",
     "status": "Live",
     "techStack": ["Python", "TensorFlow", "OpenCV", "Deep Learning"],
-    "github": "https://github.com",
-    "liveDemo": "https://demo.com",
+    "github": null,
+    "liveDemo": null,
     "image": null
   },
   {
@@ -17,8 +17,8 @@
     "category": "AI/ML",
     "status": "Completed",
     "techStack": ["Python", "Keras", "CNN", "Medical Imaging"],
-    "github": "https://github.com",
-    "liveDemo": "#",
+    "github": "https://github.com/Akshayrr07/Pnuemonia_Detection",
+    "liveDemo": null,
     "image": null
   },
   {
@@ -28,8 +28,8 @@
     "category": "Full Stack",
     "status": "Featured",
     "techStack": ["React", "Vite", "TailwindCSS", "Framer Motion"],
-    "github": "https://github.com",
-    "liveDemo": "https://demo.com",
+    "github": "https://github.com/Akshayrr07/Portfolio",
+    "liveDemo": null,
     "image": null
   },
   {
@@ -39,8 +39,8 @@
     "category": "Full Stack",
     "status": "Completed",
     "techStack": ["React", "Node.js", "MongoDB", "Express"],
-    "github": "https://github.com",
-    "liveDemo": "#",
+    "github": null,
+    "liveDemo": null,
     "image": null
   },
   {
@@ -50,8 +50,8 @@
     "category": "Deployment",
     "status": "In Progress",
     "techStack": ["Docker", "AWS", "CI/CD", "Kubernetes"],
-    "github": "https://github.com",
-    "liveDemo": "#",
+    "github": null,
+    "liveDemo": null,
     "image": null
   }
 ]

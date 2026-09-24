@@ -79,16 +79,18 @@ const ProjectDetail = () => {
       </motion.div>
 
       <motion.div variants={fadeInUp} className="flex flex-wrap gap-6">
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-xl font-semibold hover:bg-accent/90 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-accent"
-        >
-          <GithubIcon className="w-5 h-5 text-white" />
-          View on GitHub
-        </a>
-        {project.liveDemo !== '#' && (
+        {project.github && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-xl font-semibold hover:bg-accent/90 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          >
+            <GithubIcon className="w-5 h-5 text-white" />
+            View on GitHub
+          </a>
+        )}
+        {project.liveDemo && (
           <a
             href={project.liveDemo}
             target="_blank"

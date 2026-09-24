@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import Button from '../common/Button';
 import { Mail, Code2, Briefcase, GraduationCap, Star } from 'lucide-react';
+import socialData from '../../assets/data/social.json';
 
 const GithubIcon = () => (
   <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
@@ -119,31 +120,37 @@ const Hero = () => {
 
             {/* 6. Social Icons */}
             <div className="flex items-center justify-center lg:justify-start gap-4 sm:gap-5 pt-1">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={socialSquareClasses}
-                aria-label="GitHub"
-              >
-                <GithubIcon />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={socialSquareClasses}
-                aria-label="LinkedIn"
-              >
-                <LinkedinIcon />
-              </a>
-              <a
-                href="mailto:contact@akshayrr.dev"
-                className={socialSquareClasses}
-                aria-label="Email"
-              >
-                <Mail className="w-4.5 h-4.5" />
-              </a>
+              {socialData.github && (
+                <a
+                  href={socialData.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={socialSquareClasses}
+                  aria-label="GitHub"
+                >
+                  <GithubIcon />
+                </a>
+              )}
+              {socialData.linkedin && (
+                <a
+                  href={socialData.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={socialSquareClasses}
+                  aria-label="LinkedIn"
+                >
+                  <LinkedinIcon />
+                </a>
+              )}
+              {socialData.email && (
+                <a
+                  href={socialData.email}
+                  className={socialSquareClasses}
+                  aria-label="Email"
+                >
+                  <Mail className="w-4.5 h-4.5" />
+                </a>
+              )}
             </div>
           </motion.div>
 
