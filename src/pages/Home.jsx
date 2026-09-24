@@ -9,27 +9,27 @@ import ContactSection from '../components/sections/Contact';
 const Home = () => {
   return (
     <div className="w-full flex flex-col">
-      <div id="home">
+      <section id="home" aria-label="Home" className="home-section">
         <Hero />
-      </div>
-      <div id="about">
+      </section>
+      <section id="about" aria-label="About" className="home-section">
         <AboutSection />
-      </div>
-      <div id="skills">
+      </section>
+      <section id="skills" aria-label="Skills" className="home-section">
         <SkillsSection />
-      </div>
-      <div id="experience">
+      </section>
+      <section id="experience" aria-label="Experience" className="home-section">
         <ExperienceSection />
-      </div>
-      <div id="projects">
+      </section>
+      <section id="projects" aria-label="Projects" className="home-section">
         <ProjectsSection />
-      </div>
-      <div id="certifications">
+      </section>
+      <section id="certifications" aria-label="Certifications" className="home-section">
         <CertificationsSection />
-      </div>
-      <div id="contact">
+      </section>
+      <section id="contact" aria-label="Contact" className="home-section">
         <ContactSection />
-      </div>
+      </section>
     </div>
   );
 };
