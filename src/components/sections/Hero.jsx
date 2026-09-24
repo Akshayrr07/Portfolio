@@ -109,10 +109,10 @@ const Hero = () => {
 
             {/* 5. CTA Buttons */}
             <div className="flex flex-wrap sm:flex-row items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">
-              <Button variant="primary" to="/projects" className="w-full sm:w-auto">
+              <Button variant="primary" href="/#projects" className="w-full sm:w-auto">
                 View Projects
               </Button>
-              <Button variant="outline" to="/contact" className="w-full sm:w-auto">
+              <Button variant="outline" href="/#contact" className="w-full sm:w-auto">
                 Contact Me
               </Button>
             </div>

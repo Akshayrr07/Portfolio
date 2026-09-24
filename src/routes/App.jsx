@@ -3,6 +3,7 @@ import { ThemeProvider } from '../hooks/useTheme.jsx';
 import MainLayout from '../layouts/MainLayout';
 import Home from '../pages/Home';
 import ProjectDetail from '../pages/ProjectDetail';
+import NotFound from '../pages/NotFound';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects/:id" element={<ProjectDetail />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </MainLayout>
       </ThemeProvider>
