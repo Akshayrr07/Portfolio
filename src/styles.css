@@ -1,58 +1,60 @@
 /* Custom global styles to augment Tailwind */
 
-/* Typography styling for display text */
-.font-display {
-  font-family: 'League Gothic', sans-serif;
-}
+@layer components {
+  /* Typography styling for display text */
+  .font-display {
+    font-family: 'League Gothic', sans-serif;
+  }
 
-/* Custom button classes (legacy support) */
-.btn {
-  padding: 12px 24px;
-  border-radius: 12px;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
-  transition: all 0.3s ease;
-}
+  /* Custom button classes (legacy support) */
+  .btn {
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+  }
 
-.btn-primary {
-  background-color: #25D366;
-  color: white;
-}
+  .btn-primary {
+    background-color: #25D366;
+    color: white;
+  }
 
-.btn-outline {
-  background-color: transparent;
-  color: #25D366;
-  border: 2px solid #25D366;
-}
+  .btn-outline {
+    background-color: transparent;
+    color: #25D366;
+    border: 2px solid #25D366;
+  }
 
-.btn:hover {
-  transform: scale(1.05);
-}
+  .btn:hover {
+    transform: scale(1.05);
+  }
 
-/* Global anchor links */
-a {
-  color: inherit;
-  text-decoration: none;
-}
+  /* Global anchor links */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
-a:hover {
-  color: #25D366;
-}
+  a:hover {
+    color: #25D366;
+  }
 
-/* Default Section spacings */
-section {
-  padding-top: 160px;
-  padding-bottom: 96px;
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-@media (max-width: 1024px) {
+  /* Default Section spacings */
   section {
-    padding-top: 136px;
-    padding-bottom: 64px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-top: 160px;
+    padding-bottom: 96px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @media (max-width: 1024px) {
+    section {
+      padding-top: 136px;
+      padding-bottom: 64px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 }
