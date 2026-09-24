@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu as MenuIcon, X as XIcon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ThemeToggle from '../common/ThemeToggle.jsx';
@@ -17,9 +17,13 @@ const SmallNavbarLogo = () => (
   </svg>
 );
 
+const MOBILE_MENU_TRANSITION_DURATION = 200;
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [pendingSection, setPendingSection] = useState('');
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navLinks = [
     { path: '/#home', label: 'Home' },
@@ -35,6 +39,29 @@ const Navbar = () => {
     if (location.pathname !== '/') return false;
     const hash = location.hash || '#home';
     return hash === path.replace('/', '');
+  };
+
+  const handleMobileSectionClick = (event, path) => {
+    if (event.defaultPrevented || event.button > 0 || event.metaKey || event.altKey || event.ctrlKey || event.shiftKey) {
+      return;
+    }
+
+    event.preventDefault();
+    const section = path.slice(path.indexOf('#') + 1);
+    setIsOpen(false);
+    setPendingSection(section);
+    navigate(path);
+  };
+
+  const handleMobileMenuExit = () => {
+    if (!pendingSection) return;
+
+    const target = document.getElementById(pendingSection);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    setPendingSection('');
   };
 
   return (
@@ -111,13 +138,13 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation Menu */}
-      <AnimatePresence>
+      <AnimatePresence onExitComplete={handleMobileMenuExit} initial={false}>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2, ease: 'easeInOut' }}
+            transition={{ duration: MOBILE_MENU_TRANSITION_DURATION / 1000, ease: 'easeInOut' }}
             className="lg:hidden overflow-hidden border-t border-neutral-200/50 dark:border-neutral-800 mt-2 pt-1.5"
           >
             <div className="py-1.5 flex flex-col gap-1">
@@ -127,7 +154,7 @@ const Navbar = () => {
                   <a
                     key={link.path}
                     href={link.path}
-                    onClick={() => setIsOpen(false)}
+                    onClick={(event) => handleMobileSectionClick(event, link.path)}
                     className={`px-3.5 py-2 text-[14px] font-medium rounded-lg transition-colors duration-200 ${isActive
                         ? 'text-accent bg-accent/10 dark:bg-accent/15 font-semibold'
                         : 'text-neutral-600 dark:text-neutral-400 hover:text-accent hover:bg-neutral-100 dark:hover:bg-white/5'
