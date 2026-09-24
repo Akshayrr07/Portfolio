@@ -8,7 +8,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="relative w-10 h-10 rounded-full border border-neutral-300 dark:border-neutral-700/80 bg-white/80 dark:bg-[#141414] hover:border-accent/60 dark:hover:border-accent/60 transition-all duration-250 transform hover:scale-105 cursor-pointer overflow-hidden flex items-center justify-center focus-visible:ring-2 focus-visible:ring-accent outline-none shadow-sm p-2.5"
+      className="relative min-h-11 min-w-11 rounded-full border border-neutral-300 dark:border-neutral-700/80 bg-white/80 dark:bg-[#141414] hover:border-accent/60 dark:hover:border-accent/60 transition-all duration-250 transform hover:scale-105 cursor-pointer overflow-hidden flex items-center justify-center focus-visible:ring-2 focus-visible:ring-accent outline-none shadow-sm p-2.5"
       aria-label="Toggle theme"
     >
       <AnimatePresence mode="wait" initial={false}>
