@@ -19,9 +19,9 @@ const ProjectDetail = () => {
         className="container mx-auto px-4 py-20"
       >
         <h1 className="text-4xl font-bold">Project not found</h1>
-        <Link to="/projects" className="mt-4 inline-block">
-          <Button variant="outline">Back to Projects</Button>
-        </Link>
+        <Button variant="outline" to="/#projects" className="mt-4">
+          Back to Projects
+        </Button>
       </motion.div>
     );
   }
@@ -35,7 +35,7 @@ const ProjectDetail = () => {
       className="container mx-auto px-4 pt-28 sm:pt-36 pb-24"
     >
       <motion.div variants={fadeInUp} className="mb-8">
-        <Link to="/projects" className="inline-flex items-center gap-2 text-neutral-500 dark:text-neutral-400 hover:text-accent transition-colors outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg px-2">
+        <Link to="/#projects" className="inline-flex items-center gap-2 text-neutral-500 dark:text-neutral-400 hover:text-accent transition-colors outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg px-2">
           <ArrowLeftIcon className="w-4 h-4" />
           Back to Projects
         </Link>
